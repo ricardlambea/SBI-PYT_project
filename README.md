@@ -6,7 +6,7 @@ Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV R
 ## **TABLE OF CONTENTS**
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-- [1. What is BioMaBuilder?](#what is biomabuilder)
+- [WhatisBioMaBuilder?](#whatisbiomabuilder)
 - [Biological framework](#biological framework)
 - [How does BioMaBuilder work?](#description)
 	- [Arguments description and requirements](#description)
@@ -28,7 +28,7 @@ Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV R
 - [Bibliography](#description)
 <!-- /TOC -->
 
-## 1. What is BioMaBuilder?
+## WhatisBioMaBuilder?
 **BioMaBuilder** (*Biological Macro-complex Builder*) is a bioinformatic tool, written in Python, to model the macro-complex structure of biomolecules, formed by proteins and DNA/RNA, from pairing interaction of a complex (protein-protein, protein-DNA/RNA) in PDB format, using the superposition strategy.  
 BioMaBuilder extracts the biological information of interaction between two biomolecules given in the pairwise-biomolecule PDB files. Based on this information, the most likely macro-complex structure is built.
 
