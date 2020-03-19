@@ -4,9 +4,8 @@ Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV R
 <sup>1</sup> MSc Bioinformatics for Health Sciences, Pompeu Fabra University, Barcelona, Spain. 2020.
 
 ## 1. What is BioMaBuilder?
-<div style="text-align: justify">**BioMaBuilder** (*Biological Macro-complex Builder*) is a bioinformatic tool, written in Python, to model the macro-complex structure of biomolecules, formed by proteins and DNA/RNA, from pairing interaction of a complex (protein-protein, protein-DNA/RNA) in PDB format.
+**BioMaBuilder** (*Biological Macro-complex Builder*) is a bioinformatic tool, written in Python, to model the macro-complex structure of biomolecules, formed by proteins and DNA/RNA, from pairing interaction of a complex (protein-protein, protein-DNA/RNA) in PDB format.
 BioMaBuilder extracts the biological information of interaction between two biomolecules given in the pairwise-biomolecule PDB files. Based on this information, the most likely macro-complex structure is built.
-</div>
 
 ## 2. Biological framework
 
@@ -115,7 +114,7 @@ First, the Boolean variable result is checked, if the result is *False* which me
 However, if the Boolean variable result is *True*, therefore, there is at least one valid superposition. Following the previous example, the unique valid superposition would be *A-A*, but actually, the interesting part of the superposition is the following:
 
 
-<img src="images/superposition.jpeg" width="500" height="300">
+<img src="images/superposition.jpeg" width="830" height="236">
 
 
 The matrices of rotation and translation, applied in the superposition, now apply to the atoms of the chain of test file which is not in the core test (chain *F* in the example). Therefore, this chain is now considered as a potential chain to add to the macro-complex.
@@ -126,7 +125,7 @@ The method *search* of this class iterate through all the atoms of the potential
 Otherwise, if the length of the clashes list is lower than the *number_clashes* value, the chain is added to the macro-complex. And the ***BioBuilder*** function is called itself again, changing the test file and rewriting the *stop_counter* as zero.
 
 
-<img src="images/macrocomplex.jpeg" width="500" height="400">
+<img src="images/macrocomplex.jpeg" width="260" height="232">
 
 
 Notice, that the ***get_best_core*** function reduces the computational cost since, all the files which can add some chain to the macro-complex model will be selected probably first.
