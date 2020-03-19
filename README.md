@@ -3,6 +3,31 @@
 Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV Roig-Genovés<sup>1</sup>.                    
 <sup>1</sup> MSc Bioinformatics for Health Sciences, Pompeu Fabra University, Barcelona, Spain. 2020.
 
+## **TABLE OF CONTENTS**
+
+<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
+- [What is BioMaBuilder?](#what is biomabuilder)
+- [Biological framework](#biological framework)
+- [How does BioMaBuilder work?](#description)
+	- [Arguments description and requirements](#description)
+		- [Mandatory arguments](#description)
+		- [Optional arguments](#description)
+- [BioMaBuilder algorithms description](#description)
+- [Limitations](#description)
+- [Requirements](#description)
+- [Installation](#description)
+- [Tutorial](#description)
+	- [Example 1](#description)
+	- [Example 2](#description)
+	- [Example 3](#description)
+	- [Example 4](#description)
+	- [Example 5](#description)
+	- [Example 6](#description)
+	- [Example 7](#description)
+- [Ongoing](#description)
+- [Bibliography](#description)
+<!-- /TOC -->
+
 ## 1. What is BioMaBuilder?
 **BioMaBuilder** (*Biological Macro-complex Builder*) is a bioinformatic tool, written in Python, to model the macro-complex structure of biomolecules, formed by proteins and DNA/RNA, from pairing interaction of a complex (protein-protein, protein-DNA/RNA) in PDB format, using the superposition strategy.  
 BioMaBuilder extracts the biological information of interaction between two biomolecules given in the pairwise-biomolecule PDB files. Based on this information, the most likely macro-complex structure is built.
@@ -139,11 +164,11 @@ Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pai
 
 
 ## 5. Limitations
-- *BioMaBuilder* is able to work with macro-complex up to 99.999 atoms (since it is under the   PDB format limitations) or up to 62 chains.
-- The *BioMaBuilder* computational cost increases linearly.
+- **BioMaBuilder** is able to work with macro-complex up to 99.999 atoms (since it is under the   PDB format limitations) or up to 62 chains.
+- The **BioMaBuilder** computational cost increases linearly.
 
 ## 6. Requirements
-BioMaBuilder requires the following python modules and packages:
+**BioMaBuilder** requires the following python modules and packages:
 
 - Python v.3.6 or higher.
 - Biopython v.1.76 or higher.
@@ -157,12 +182,12 @@ For further visualization of macro-complex you can use Chimera, ICM, or PyMol.
 
 ## 7. Installation
 
-To install the BioMaBuilder package the user just needs to download the **biomabuilder-0.1.0.tar.gz** (which can be found inside the `dist` folder), which is a source archive, and unpack it. Doing that, a directory named biomabuilder-0.1.0 will be created, then `cd` into that directory, where `setup.py` should be (check it before continuing), and run: ``` python3 setup.py install```, which will ultimately copy all files from the package to the appropiate directory for third-party packages in the users Python installation.
+To install the **BioMaBuilder** package the user just needs to download the **biomabuilder-0.1.0.tar.gz** (which can be found inside the `dist` folder), which is a source archive, and unpack it. Doing that, a directory named biomabuilder-0.1.0 will be created, then `cd` into that directory, where `setup.py` should be (check it before continuing), and run: ``` python3 setup.py install```, which will ultimately copy all files from the package to the appropiate directory for third-party packages in the users Python installation.
 
 ## 8. Tutorial
 
-First of all it is important to state that we did not install the package, so we are running it from within the BioMaBuilder folder, where all the scripts are stored. Take into account that the input, fasta, and output arguments can be a path where those files are stored, so the examples provided here probably will not work in your computer, each user has to adapt the command line syntaxis for his particular case.
-For the visualization of the macrocomplexes we used the Chimera software, in clear brown 
+First of all it is important to state that we did not install the package, so we are running it from within the biomabuilder folder, where all the scripts are stored. Take into account that the input, fasta, and output arguments can be a path where those files are stored, so the examples provided here probably will not work in your computer, each user has to adapt the command line syntaxis for his particular case.
+For the visualization of the macrocomplexes we used the Chimera software, in light brown can be seen the structures created by our algorithm, and in light blue the original structures from PDB database.
 
 
 ### **EXAMPLE 1:**
