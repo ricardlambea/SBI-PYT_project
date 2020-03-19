@@ -154,11 +154,12 @@ For further visualization of macro-complex you can use Chimera, ICM, or PyMol.
 
 ## 7. Installation
 
-To install the BioMaBuilder package the user just needs to download the **BioMaBuilder-0.1.targ.gz** (if working on **Unix**) or the **BioMaBuilder-0.1.zip** (if working on **Windows**), and unpack it. Doing that, a directory named BioMaBuilder-0.1 will be created, then `cd` into that directory, and run: ``` python setup.py install```, which will ultimately copy all files from the package to the appropiate directory for third-party packages in their Python installation.
+To install the BioMaBuilder package the user just needs to download the **BioMaBuilder-0.1.0.targ.gz** (which can be found inside the `dist` folder), which is a source archive, and unpack it. Doing that, a directory named BioMaBuilder-0.1.0 will be created, then `cd` into that directory, where `setup.py` should be (check it before continuing), and run: ``` python3 setup.py install```, which will ultimately copy all files from the package to the appropiate directory for third-party packages in the users Python installation.
 
 ## 8. Tutorial
 
 First of all it is important to state that we have created a directory *"examples"* in which we have all the folders that are used as input directories for our program, and that the command is always executed from within that *"examples"* directory.
+For the visualization of the macrocomplexes we used the Chimera software.
 
 
 ### **EXAMPLE 1:**
