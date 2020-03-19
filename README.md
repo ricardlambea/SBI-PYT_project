@@ -299,4 +299,4 @@ RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.
 - Baaden, M. & Marrink, S. (2013). Coarse-Grain Modelling Of Protein–Protein Interactions. Current Opinion in Structural Biology 2013, 23:878–886. doi: 10.1016/j.sbi.2013.09.004.
 - Barradas-Bautista D., Rosell M., Pallara C. & Fernandez-Recio J. (2017). Structural Prediction Of Protein-Protein Interactions By Docking: Application To Biomedical Problems. Elsevier. doi: 10.1016/bs.apcsb.2017.06.003.
 - Martí-Renom, M., Stuart, A., Fiser, A., Sánchez, R., Melo, F. & Sali, A. (2000). Comparative Protein Structure Modeling Of Genes And Genomes. Biophys. Biomol. Struct. 2000. 29:291–325. doi: 10.1146/annurev.biophys.29.1.291.
-- Alexiou, A. & Ashraf, G. (2017). Protein-protein interaction (PPI) network: Recent advances in drug discovery. Current drug metabolism. 18. 5-10. doi: 10.2174/1389200217666161102150602.
+- Alexiou, A. & Ashraf, G. (2017). Protein-protein interaction (PPI) network: Recent advances in drug discovery. Current Drug Metabolism. 18. 5-10. doi: 10.2174/1389200217666161102150602.
