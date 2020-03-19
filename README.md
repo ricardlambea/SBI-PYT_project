@@ -66,7 +66,7 @@ The output argument must be a directory or path directory. The program will chec
 The fasta argument must be a fasta file with all the sequences of the complex.  
 *Example:* ``` -fa fafile.fasta, -fa fafile.fa```
 
-#### 3.1.2. Optional arguments
+#### Optional arguments
 
 - ***-v / --verbose***   
 
