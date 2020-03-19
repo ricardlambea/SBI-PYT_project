@@ -189,7 +189,7 @@ with these parameters:
 	iteration cutoff: 2
 RMSD between 146 pruned atom pairs is 0.000 angstroms; (across all 146 pairs: 0.000)
 
-<img src="images/image1gzx_compared.png" width="500" height="500">
+<img src="images/1gzx_compared.png" width="500" height="500">
 
 
 ### **EXAMPLE 2:**
