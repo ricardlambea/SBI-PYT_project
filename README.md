@@ -118,8 +118,8 @@ First, the Boolean variable result is checked, if the result is *False* which me
 However, if the Boolean variable result is *True*, therefore, there is at least one valid superposition. Following the previous example, the unique valid superposition would be *A-A*, but actually, the interesting part of the superposition is the following:
 
 
-<img src="images/superposition.jpeg" width="830" height="236">
-
+| :---: | <img src="images/superposition.jpeg" width="830" height="236"> | :---: |
+| :---: | :---: | :---: |
 
 The matrices of rotation and translation, applied in the superposition, now apply to the atoms of the chain of test file which is not in the core test (chain *F* in the example). Therefore, this chain is now considered as a potential chain to add to the macro-complex.
 
