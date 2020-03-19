@@ -145,13 +145,13 @@ Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pai
 ## 6. Requirements
 BioMaBuilder requires the following python modules and packages:
 
-•	Python v.3.6 or higher.
-•	Biopython v.1.76 or higher.
-•	argparse module
-•	sys module
-•	os module
-•	re module
-•	pairwise2 module
+- Python v.3.6 or higher.
+- Biopython v.1.76 or higher.
+- argparse module
+- sys module
+- os module
+- re module
+- pairwise2 module
 
 For further visualization of macro-complex you can use Chimera, ICM, or PyMol.
 
