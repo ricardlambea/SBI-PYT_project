@@ -139,7 +139,7 @@ Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pai
 
 
 ## 5. Limitations
-- *BioMaBuilder* is able to work with macro-complex up to 99.999 atoms (since it is under the   PDB format limitations).
+- *BioMaBuilder* is able to work with macro-complex up to 99.999 atoms (since it is under the   PDB format limitations) or up to 62 chains.
 - The *BioMaBuilder* computational cost increases linearly.
 
 ## 6. Requirements
@@ -304,7 +304,7 @@ RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.
 Future approaches that would be added to this program include:
 - Handling small compounds such hormones, peptides, metabolites or drugs.
 - Performing a refinement of the final macro-complex allowing the model dynamics and flexibility.
-- Being able to test complexes composed of more than 9.999 atoms.
+- Being able to test complexes composed of more than 99.999 atoms or a number of chains greater than 62.
 - Generating more than one possible model.
 
 ## 10. Bibliography
