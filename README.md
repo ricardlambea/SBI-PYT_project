@@ -7,9 +7,9 @@ Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV R
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 1. [What is BioMaBuilder?](#1-what-is-biomabuilder)
-- [Biological framework](#biological framework)
-- [How does BioMaBuilder work?](#description)
-	- [Arguments description and requirements](#description)
+2. [Biological framework](#2-biological-framework)
+3. [How does BioMaBuilder work?](#3-how-does-biomabuilder-work)
+	3.1. [Arguments description and requirements](#3-1-arguments-description-and-requirements)
 		- [Mandatory arguments](#description)
 		- [Optional arguments](#description)
 - [BioMaBuilder algorithms description](#description)
@@ -42,7 +42,7 @@ Here, it is presented a superimposition-based approach that works on the pairwis
 ## 3. How does BioMaBuilder work?
 BioMaBuilder uses a recursive algorithm to build the quaternary structure of a biological macro-complex. In the following section, a wide description of the recursive algorithm and how it works is given.
 
-### 3.1. Arguments description and requirements.
+### 3.1. Arguments description and requirements
 BioMaBuilder can deal with several arguments, some of them are optional (the user can modify them according to its particular goal) and other ones are mandatory ( needed to run the program).
 #### 3.1.1. Mandatory arguments
 
