@@ -161,7 +161,7 @@ To install the BioMaBuilder package the user just needs to download the **biomab
 ## 8. Tutorial
 
 First of all it is important to state that we did not install the package, so we are running it from within the BioMaBuilder folder, where all the scripts are stored. Take into account that the input, fasta, and output arguments can be a path where those files are stored, so the examples provided here probably will not work in your computer, each user has to adapt the command line syntaxis for his particular case.
-For the visualization of the macrocomplexes we used the Chimera software.
+For the visualization of the macrocomplexes we used the Chimera software, in clear brown 
 
 
 ### **EXAMPLE 1:**
