@@ -1,5 +1,5 @@
 # **BioMaBuilder: Biological Macro-complex Builder**
-<div style="text-align: justify">
+
 <div style="text-align: justify">**BioMaBuilder: A program  for reconstructing biological macro-complexes from pairwise biological interactions**.
 Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV Roig-Genovés<sup>1</sup>.                    
 <sup>1</sup> MSc Bioinformatics for Health Sciences, Pompeu Fabra University, Barcelona, Spain. 2020.</div>
