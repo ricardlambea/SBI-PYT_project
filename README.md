@@ -301,11 +301,11 @@ RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.
 
 ## 9. On going
 
-Future approaches it would be added to this program include:
+Future approaches that would be added to this program include:
 - Working with an accuracy to handle small compounds such hormones, peptides, metabolites or drugs.
-- Performing a refinement of the final macrocomplex allowing the model dynamics and flexibility.
+- Performing a refinement of the final macro-complex allowing the model dynamics and flexibility.
 - Being able to test complexes composed of more than 9.999 atoms.
-- Generating more than one model.
+- Generating more than one possible model.
 
 ## 10. Bibliography
 - Kufareva, I., & Abagyan, R. (2011). Methods of Protein Structure Comparison. Methods In Molecular Biology, 231-257. doi: 10.1007/978-1-61779-588-6_10.
