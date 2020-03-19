@@ -1,4 +1,4 @@
-<div style="text-align: justify"> your-text-here </div
+<div style="text-align: justify"> your-text-here
 	
 # **BioMaBuilder: Biological Macro-complex Builder**
 **BioMaBuilder: A program  for reconstructing biological macro-complexes from pairwise biological interactions**.
@@ -289,3 +289,5 @@ RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.
 
 ## 9. Bibliography
 - Kufareva, I., & Abagyan, R. (2011). Methods of Protein Structure Comparison. Methods In Molecular Biology, 231-257. doi: 10.1007/978-1-61779-588-6_10.
+
+</div
