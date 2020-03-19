@@ -4,7 +4,7 @@ Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV R
 <sup>1</sup> MSc Bioinformatics for Health Sciences, Pompeu Fabra University, Barcelona, Spain. 2020.
 
 ## 1. What is BioMaBuilder?
-**BioMaBuilder** (*Biological Macro-complex Builder*) is a bioinformatic tool, written in Python, to model the macro-complex structure of biomolecules, formed by proteins and DNA/RNA, from pairing interaction of a complex (protein-protein, protein-DNA/RNA) in PDB format, using the superposition strategy.
+**BioMaBuilder** (*Biological Macro-complex Builder*) is a bioinformatic tool, written in Python, to model the macro-complex structure of biomolecules, formed by proteins and DNA/RNA, from pairing interaction of a complex (protein-protein, protein-DNA/RNA) in PDB format, using the superposition strategy.  
 BioMaBuilder extracts the biological information of interaction between two biomolecules given in the pairwise-biomolecule PDB files. Based on this information, the most likely macro-complex structure is built.
 
 ## 2. Biological framework
@@ -139,7 +139,8 @@ Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pai
 
 
 ## 5. Limitations
-
+- *BioMaBuilder* is able to work with macro-complex up to 99.999 atoms (since it is under the   PDB format limitations).
+- The *BioMaBuilder* computational cost increases linearly.
 
 ## 6. Requirements
 BioMaBuilder requires the following python modules and packages:
@@ -298,7 +299,15 @@ RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.
 <img src="images/image5vox_compared.png" width="500" height="500">
 
 
-## 9. Bibliography
+## 9. On going
+
+Future approaches it would be added to this program include:
+- Working with an accuracy to handle small compounds such hormones, peptides, metabolites or drugs.
+- Performing a refinement of the final macrocomplex allowing the model dynamics and flexibility.
+- Being able to test complexes composed of more than 9.999 atoms.
+- Generating more than one model.
+
+## 10. Bibliography
 - Kufareva, I., & Abagyan, R. (2011). Methods of Protein Structure Comparison. Methods In Molecular Biology, 231-257. doi: 10.1007/978-1-61779-588-6_10.
 - Garcia-Garcia, J., Bonet, J., Guney, E., Fornes, O., Planas, J. & Oliva, B. (2012). Networks Of Protein-protein Interactions: From Uncertainty To Molecular Details. Molecular Bioinformatics. doi: 10.1002/minf.201200005.
 - Fornes, O., Garcia-Garcia, J., Bonet, J. & Oliva, B. (2014). On The Use Of Knowledge-Based Potentials For The Evaluation Of Models Of Protein–Protein, Protein–DNA, And Protein–RNA Interactions. Advances in Protein Chemistry and Structural Biology. Vol. 94, Chapter 4. doi: 10.1016/B978-0-12-800168-4.00004-4.
