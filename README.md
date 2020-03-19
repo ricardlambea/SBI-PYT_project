@@ -17,34 +17,34 @@ Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV R
 6. [Requirements](#requirements)
 7. [Installation](#installation)
 8. [Tutorial](#tutorial)
-	8.1. [Example 1](#example-1)
-	8.2. [Example 2](#example-2)
-	8.3. [Example 3](#example-3)
-	8.4. [Example 4](#example-4)
-	8.5. [Example 5](#example-5)
-	8.6. [Example 6](#example-6)
-	8.7. [Example 7](#example-7)
+	- [Example 1](#example-1)
+	- [Example 2](#example-2)
+	- [Example 3](#example-3)
+	- [Example 4](#example-4)
+	- [Example 5](#example-5)
+	- [Example 6](#example-6)
+	- [Example 7](#example-7)
 9. [Ongoing](#ongoing)
 10. [Bibliography](#bibliography)
 <!-- /TOC -->
 
-## 1. What is BioMaBuilder?
+## What is BioMaBuilder?
 **BioMaBuilder** (*Biological Macro-complex Builder*) is a bioinformatic tool, written in Python, to model the macro-complex structure of biomolecules, formed by proteins and DNA/RNA, from pairing interaction of a complex (protein-protein, protein-DNA/RNA) in PDB format, using the superposition strategy.  
 BioMaBuilder extracts the biological information of interaction between two biomolecules given in the pairwise-biomolecule PDB files. Based on this information, the most likely macro-complex structure is built.
 
-## 2. Biological framework
+## Biological framework
 The understanding of biological processes at a molecular level is essential to get an insight into the disease mechanism, its causes, prognosis and development, and also the identification of relevant therapeutic targets. Moreover, having the structural model of a protein is one of the keys (Widerstein M and J. Sippl M, 2007) that can lead to the design of drug-like inhibitors and the development of successful treatments for diseases. Indeed, proteins act in a cell not as individual entities but in complex with other biomolecules (i.e., protein-protein (PPI), protein-DNA, and protein-RNA interactions)(Petoukhov MV, 2005 et al.; Fornes O, 2014 et al.). In that context, protein interactions are crucial in most biological processes giving rise to the functionality of a cell. For instance, a particular transcription factor may activate one gene or another depending on its interactions with other proteins not only with DNA (Garcia-Garcia J., 2012 et al.). Furthermore, the interface between two proteins is the result of the specific interaction between residue-pairs playing a structural and functional role for the interaction (Garcia-Garcia J., 2016 et al.). Therefore, the atomic determination of the interacting regions of PPI has become increasingly interesting in biological research in order to clarify not only the function but also the malfunctions of proteins (W. Senior A., 2019 et al.).
 
 Even though protein structures can be challenging to determine experimentally, several experimental structure determination techniques have been developed and improved in accuracy, but they remain difficult and time-consuming. As a result, computational strategies have been developed to model PPI (Dill, K.A. and MacCallum, J. L., 2012), which, in combination with experimental data are useful to refine and predict its structural and dynamic aspects (Baaden M and J. Marrink S., 2013) and its extensive applicability goes from diagnosis and vaccine design to drug discovery (Barradas-Bautista D., 2018 et al). However, even if we know all individual interaction pairs of a complex, modeling the complete macro-complex is a challenge. To that end, current in-silico approaches like structure comparison methods, are being used (Kufareva I. and Abagyan R., 2012).
 
 Here, it is presented a superimposition-based approach that works on the pairwise-interaction chains in the PDB-files format. This method takes into account the evaluation of residue correspondence obtained from such superimposition relying on distance measurements between the reference and test backbone-atomic coordinates, minimizing the global Root Mean Square Deviation (RMSD), which is a measurement of the structural similarity, and minimizing also the number of clashes produced between the neighbour-atoms in the superimposition final model. As the full potential of the genome sequencing projects will only be realized once all protein functions become known and understood (Martí-Renom MA., 2000 et. al.), an important bridging role will be played by this methodology until arising the deep comprehension of the structural and functional biology.
 
-## 3. How does BioMaBuilder work?
+## How does BioMaBuilder work?
 BioMaBuilder uses a recursive algorithm to build the quaternary structure of a biological macro-complex. In the following section, a wide description of the recursive algorithm and how it works is given.
 
-### 3.1. Arguments description and requirements
+### Arguments description and requirements
 BioMaBuilder can deal with several arguments, some of them are optional (the user can modify them according to its particular goal) and other ones are mandatory ( needed to run the program).
-#### 3.1.1. Mandatory arguments
+#### Mandatory arguments
 
 - ***-i / --input***
 
@@ -111,7 +111,7 @@ The output_filename argument sets up the name of the final PDB file. By default,
 *Example:* ``` -of 1ghs_model_BioMaBuilder```
 
 
-## 4. *BioMaBuilder* algorithm’s description
+## *BioMaBuilder* algorithm’s description
 BioMaBuilder uses a recursive algorithm which will be explained in this section step by step.
 As have been explained in ***argument description and requirements*** section, as input, a directory containing all the PDB files with the pairwise interactions is given.
 BioMaBuilder uses an internal function to obtain all the PDB files present in the input directory. In this step, the program is able to handle errors such as the name given by the user as an input, actually is not a directory.
@@ -163,11 +163,11 @@ Once ***BioBuilder*** has iterate through all the PDB files, two scenarios can t
 Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pairwise alignments among the sequences provide in the fasta file.
 
 
-## 5. Limitations
+## Limitations
 - **BioMaBuilder** is able to work with macro-complex up to 99.999 atoms (since it is under the   PDB format limitations) or up to 62 chains.
 - The **BioMaBuilder** computational cost increases linearly.
 
-## 6. Requirements
+## Requirements
 **BioMaBuilder** requires the following python modules and packages:
 
 - Python v.3.6 or higher.
@@ -180,17 +180,17 @@ Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pai
 
 For further visualization of macro-complex you can use Chimera, ICM, or PyMol.
 
-## 7. Installation
+## Installation
 
 To install the **BioMaBuilder** package the user just needs to download the **biomabuilder-0.1.0.tar.gz** (which can be found inside the `dist` folder), which is a source archive, and unpack it. Doing that, a directory named biomabuilder-0.1.0 will be created, then `cd` into that directory, where `setup.py` should be (check it before continuing), and run: ``` python3 setup.py install```, which will ultimately copy all files from the package to the appropiate directory for third-party packages in the users Python installation.
 
-## 8. Tutorial
+## Tutorial
 
 First of all it is important to state that we did not install the package, so we are running it from within the biomabuilder folder, where all the scripts are stored. Take into account that the input, fasta, and output arguments can be a path where those files are stored, so the examples provided here probably will not work in your computer, each user has to adapt the command line syntaxis for his particular case.
 For the visualization of the macrocomplexes we used the Chimera software, in light brown can be seen the structures created by our algorithm, and in light blue the original structures from PDB database.
 
 
-### **EXAMPLE 1:**
+### **Example 1:**
 The first example is the protein **1gzx**, which is the oxy T state haemoglobin from *Homo sapiens*. This protein hetero 4-mer (A2B2).
 To run our program we execute the following command:
 
@@ -218,7 +218,7 @@ RMSD between 146 pruned atom pairs is 0.000 angstroms; (across all 146 pairs: 0.
 <img src="images/image1gzx_compared.png" width="500" height="500">
 
 
-### **EXAMPLE 2:**
+### **Example 2:**
 The second example is the protein **3kuy**, which corresponds to DNA stretching in the nucleosome, which in turn facilitates alkylation by an intercalating antitumor agent, and it comes from *Escherichia coli*. This protein is a hetero 8-mer (A2B2C2D2).
 To build our model we execute the following command:
 
@@ -242,7 +242,7 @@ RMSD between 106 pruned atom pairs is 0.000 angstroms; (across all 106 pairs: 0.
 <img src="images/image3kuy_compared.png" width="500" height="500">
 
 
-### **EXAMPLE 3:**
+### **Example 3:**
 The third example is the protein **5ara**, which is a bovine mitochondrial ATP synthase from *E. coli* BL21(DE3). This protein is a hetero 22-mer (A8B3C3DEFGHIJK).
 In order to buil the complex we run on the shell the command:
 ```bash
@@ -263,7 +263,7 @@ RMSD between 509 pruned atom pairs is 0.000 angstroms; (across all 509 pairs: 0.
 <img src="images/image5ara_compared.png" width="500" height="500">
 
 
-### **EXAMPLE 4:**
+### **Example 4:**
 The fourth example is the protein **5dn6**, an ATP synthase from *Paracoccus dentrifricans* (strain Pd 1222). It is a hetero 27-mer (A12B3C3DEFGHIJKL).
 To build the model we execute the following command in the shell:
 
@@ -275,7 +275,7 @@ The computational time was 14.164 seconds.
 <img src="images/image5dn6_compared.png" width="500" height="500">
 
 
-### **EXAMPLE 5:**
+### **Example 5:**
 The fifth example is the protein **5oom**, a structure of a native assembly intermediate of the human mitochondrial ribosome with unfolded interfacial rRNA. It is a hetero 53-mer  (ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzA).
 To build the model we execute the following command:
 
@@ -288,7 +288,7 @@ The computational time has been 1 minute and 7.917 seconds.
 <img src="images/image5oom_compared.png" width="500" height="500">
 
 
-### **EXAMPLE 6:**
+### **Example 6:**
 The sixth example is the protein **6ezm**, which is a imidazoleglycerol-phosphate dehydratase from *Saccharomyces cerevisiae*. It is a homo 24-mer (A24).
 We run the next command on the shell to build it:
 
@@ -301,7 +301,7 @@ The computational time has been 6.389 seconds.
 <img src="images/image6ezm_compared.png" width="500" height="500">
 
 
-### **EXAMPLE 7:**
+### **Example 7:**
 The seventh example is the protein **5vox**, which is a V-ATPase from *S. cerevisiae* (strain ATCC 204508/S288c). It is a hetero 33-mer (A8B3C3D3E3F3GHIJKLMNOP).
 To build the model we execute the following command:
 
@@ -324,7 +324,7 @@ RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.
 <img src="images/image5vox_compared.png" width="500" height="500">
 
 
-## 9. Ongoing
+## Ongoing
 
 Future approaches that would be added to this program include:
 - Handling small compounds such hormones, peptides, metabolites or drugs.
@@ -332,7 +332,7 @@ Future approaches that would be added to this program include:
 - Being able to test complexes composed of more than 99.999 atoms or a number of chains greater than 62.
 - Generating more than one possible model.
 
-## 10. Bibliography
+## Bibliography
 - Kufareva, I., & Abagyan, R. (2011). Methods of Protein Structure Comparison. Methods In Molecular Biology, 231-257. doi: 10.1007/978-1-61779-588-6_10.
 - Garcia-Garcia, J., Bonet, J., Guney, E., Fornes, O., Planas, J. & Oliva, B. (2012). Networks Of Protein-protein Interactions: From Uncertainty To Molecular Details. Molecular Bioinformatics. doi: 10.1002/minf.201200005.
 - Fornes, O., Garcia-Garcia, J., Bonet, J. & Oliva, B. (2014). On The Use Of Knowledge-Based Potentials For The Evaluation Of Models Of Protein–Protein, Protein–DNA, And Protein–RNA Interactions. Advances in Protein Chemistry and Structural Biology. Vol. 94, Chapter 4. doi: 10.1016/B978-0-12-800168-4.00004-4.
