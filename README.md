@@ -154,7 +154,7 @@ For further visualization of macro-complex you can use Chimera, ICM, or PyMol.
 
 ## 7. Installation
 
-To install the BioMaBuilder package the user just needs to download the **BioMaBuilder-0.1.0.targ.gz** (which can be found inside the `dist` folder), which is a source archive, and unpack it. Doing that, a directory named BioMaBuilder-0.1.0 will be created, then `cd` into that directory, where `setup.py` should be (check it before continuing), and run: ``` python3 setup.py install```, which will ultimately copy all files from the package to the appropiate directory for third-party packages in the users Python installation.
+To install the BioMaBuilder package the user just needs to download the **biomabuilder-0.1.0.tar.gz** (which can be found inside the `dist` folder), which is a source archive, and unpack it. Doing that, a directory named biomabuilder-0.1.0 will be created, then `cd` into that directory, where `setup.py` should be (check it before continuing), and run: ``` python3 setup.py install```, which will ultimately copy all files from the package to the appropiate directory for third-party packages in the users Python installation.
 
 ## 8. Tutorial
 
