@@ -6,7 +6,7 @@ Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV R
 ## **TABLE OF CONTENTS**
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-1. [What is BioMaBuilder?](#1.-what-is-biomabuilder)
+1. [What is BioMaBuilder?](#1-what-is-biomabuilder)
 - [Biological framework](#biological framework)
 - [How does BioMaBuilder work?](#description)
 	- [Arguments description and requirements](#description)
