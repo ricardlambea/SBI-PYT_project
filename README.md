@@ -5,18 +5,17 @@ Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV R
 
 ## **TABLE OF CONTENTS**
 
-<!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
-1. [What is BioMaBuilder?](#what-is-biomabuilder)
-2. [Biological framework](#biological-framework)
-3. [How does BioMaBuilder work?](#how-does-biomabuilder-work)
+- [What is BioMaBuilder?](#what-is-biomabuilder)
+- [Biological framework](#biological-framework)
+- [How does BioMaBuilder work?](#how-does-biomabuilder-work)
 	- [Arguments description and requirements](#arguments-description-and-requirements)
 		- [Mandatory arguments](#mandatory-arguments)
 		- [Optional arguments](#optional-arguments)
-4. [BioMaBuilder algorithms description](#biomabuilder-algorithms-description)
-5. [Limitations](#limitations)
-6. [Requirements](#requirements)
-7. [Installation](#installation)
-8. [Tutorial](#tutorial)
+- [BioMaBuilder algorithms description](#biomabuilder-algorithms-description)
+- [Limitations](#limitations)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Tutorial](#tutorial)
 	- [Example 1](#example-1)
 	- [Example 2](#example-2)
 	- [Example 3](#example-3)
@@ -24,9 +23,9 @@ Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV R
 	- [Example 5](#example-5)
 	- [Example 6](#example-6)
 	- [Example 7](#example-7)
-9. [Ongoing](#ongoing)
-10. [Bibliography](#bibliography)
-<!-- /TOC -->
+- [Ongoing](#ongoing)
+- [Bibliography](#bibliography)
+
 
 ## What is BioMaBuilder?
 **BioMaBuilder** (*Biological Macro-complex Builder*) is a bioinformatic tool, written in Python, to model the macro-complex structure of biomolecules, formed by proteins and DNA/RNA, from pairing interaction of a complex (protein-protein, protein-DNA/RNA) in PDB format, using the superposition strategy.  
