@@ -24,36 +24,36 @@ BioMaBuilder can deal with several arguments, some of them are optional (the use
 - ***-i / --input***
 
 The input argument must be a directory or path directory with all the PDB files with the pairwise interactions.  
-*Example: -i  /Users/peperoig/Desktop/SBI-PYT_project/1gzx_all_interactions*
+*Example: ```bash -i  /Users/peperoig/Desktop/SBI-PYT_project/1gzx_all_interactions*```
 
 
 **IMPORTANT**: The pairwise interaction files must have a specific format file name: xxxx_YZ.pdb, where xxxx are four characters reserved for the name of the macro-complex and, Y and Z must be the name of both chains that are interacting in the given PDB file (they can be letters, upper and lower case, or numbers).  
-*Example: 1gzx_AB.pdb, 3dec_1C, 2mss_aC, 1fgg_ab, 1gzx_3z*
+*Example: 1gzx_AB.pdb, 3dec_1C.pdb, 2mss_aC.pdb, 1fgg_ab.pdb, 1gzx_3z.pdb*
 
 
 - ***-o / --output***
 
 The output argument must be a directory or path directory. The program will check out if the directory exists in order to store the PDB file with the final model in it. However, if this directory does not exist, the program will create it and store the PDB file with the final model in it.  
-*Example: -o  /Users/peperoig/Desktop/SBI-PYT_project/1gzx_final_model*
+*Example: ```bash -o  /Users/peperoig/Desktop/SBI-PYT_project/1gzx_final_model*```
 
 
 - ***-fa / --fasta***
 
 The fasta argument must be a fasta file with all the sequences of the complex.  
-*Example: -fa fafile.fasta, -fa fafile.fa*
+*Example: ```bash -fa fafile.fasta, -fa fafile.fa*```
 
 #### 3.1.2. Optional arguments
 
 - ***-v / --verbose***   
 
 If verbose argument is applied, the progress of the program will be printed in the standard error.  
-*Example: -v*
+*Example: ```bash -v```*
 
 
 - ***-sto / --stoichiometry***
 
 The stoichiometry argument establishes the number of chains in the final model. If not defined, the program will add the number of chains provided in the input directory.  
-*Example: -sto 32*
+*Example: ```bash -sto 32```*
 
 **IMPORTANT:** It must be a natural number.
 
@@ -61,13 +61,13 @@ The stoichiometry argument establishes the number of chains in the final model. 
 - ***-rmsd / --RMSD_threshold***
 
 The RMSD_threshold argument sets up a root-mean-square deviation threshold. By default, the RMSD threshold is 0.6 Angstroms *(Kufareva & Abagyan, 2011).*  
-*Example: -rmsd 0.9*
+*Example: ```bash -rmsd 0.9```*
 
 
 - ***-cs / --core_selection***
 
 The core_selection argument allows establishing the reference file that will act as a core for the macro-complex building. This argument can reduce the computational cost of the program. In the algorithm description section, a further explanation about this argument is given.  
-*Example: -cs 1gzx_AC.pdb*
+*Example: ```bash -cs 1gzx_AC.pdb```*
 
 **IMPORTANT:** It must be an existing file in the input directory.
 
@@ -75,7 +75,7 @@ The core_selection argument allows establishing the reference file that will act
 - ***-ncl / --number_clashes***  
 
 The number_clashes argument sets up the maximum number of clashes allowed during the superimposition. By default is defined as 30 clashes. Regarding this number, the superposition step will be more or less strict.
-*Example: -ncl 23*
+*Example: ```bash -ncl 23```*
 
 
 - ***-of / --output_filename***
@@ -83,7 +83,7 @@ The number_clashes argument sets up the maximum number of clashes allowed during
 The output_filename argument sets up the name of the final PDB file. By default, the name of the file will be macrocomplex.
 
 **IMPORTANT:** It must be defined without any extension(i.e. .pdb).   
-*Example: -of 1ghs_model_BioMaBuilder*
+*Example: ```bash -of 1ghs_model_BioMaBuilder```*
 
 
 ## 4. *BioMaBuilder* algorithm’s description
