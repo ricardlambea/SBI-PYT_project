@@ -302,7 +302,7 @@ RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.
 ## 9. On going
 
 Future approaches that would be added to this program include:
-- Working with an accuracy to handle small compounds such hormones, peptides, metabolites or drugs.
+- Handling small compounds such hormones, peptides, metabolites or drugs.
 - Performing a refinement of the final macro-complex allowing the model dynamics and flexibility.
 - Being able to test complexes composed of more than 9.999 atoms.
 - Generating more than one possible model.
