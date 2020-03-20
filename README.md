@@ -42,7 +42,7 @@ Here, it is presented a superimposition-based approach that works on the pairwis
 BioMaBuilder uses a recursive algorithm to build the quaternary structure of a biological macro-complex. In the following section, a wide description of the recursive algorithm and how it works is given.
 
 ### Arguments description and requirements
-BioMaBuilder can deal with several arguments, some of them are optional (the user can modify them according to its particular goal) and other ones are mandatory ( needed to run the program).
+BioMaBuilder can deal with several arguments, some of them are optional (the user can modify them according to its particular goal) and others are mandatory (needed to run the program).
 #### Mandatory arguments
 
 - ***-i / --input***
@@ -51,13 +51,13 @@ The input argument must be a directory or path directory with all the PDB files 
 *Example:* ``` -i  /Users/peperoig/Desktop/SBI-PYT_project/1gzx_all_interactions```
 
 
-**IMPORTANT**: The pairwise interaction files must have a specific format file name: xxxx_YZ.pdb, where xxxx are four characters reserved for the name of the macro-complex and, Y and Z must be the name of both chains that are interacting in the given PDB file (they can be letters, upper and lower case, or numbers).  
+**IMPORTANT**: The pairwise interaction files must have a specific format file name: xxxx_YZ.pdb, where xxxx are four characters reserved for the name of the macro-complex and Y and Z must be the name of both chains that are interacting in the given PDB file (they can be letters, upper and lower case, or numbers).  
 *Example: 1gzx_AB.pdb, 3dec_1C.pdb, 2mss_aC.pdb, 1fgg_ab.pdb, 1gzx_3z.pdb*
 
 
 - ***-o / --output***
 
-The output argument must be a directory or path directory. The program will check out if the directory exists in order to store the PDB file with the final model in it. However, if this directory does not exist, the program will create it and store the PDB file with the final model in it.  
+The output argument must be a directory or path directory. The program will check out if the directory exists in order to store the PDB file with the final model in it. Otherwise, if this directory does not exist, the program will create it and store the PDB file with the final model inside.  
 *Example:* ``` -o  /Users/peperoig/Desktop/SBI-PYT_project/1gzx_final_model```
 
 
@@ -70,13 +70,13 @@ The fasta argument must be the path of a fasta file with all the sequences of th
 
 - ***-v / --verbose***   
 
-If verbose argument is applied, the progress of the program will be printed in the standard error.  
+If verbose argument is applied, the progress of the program will be printed in the standard error channel.  
 *Example:* ``` -v```
 
 
 - ***-sto / --stoichiometry***
 
-The stoichiometry argument establishes the number of chains in the final model. If not defined, the program will add the number of chains provided in the input directory.  
+The stoichiometry argument establishes the number of chains in the final model. If not defined, the program will try to add the number of chains provided in the input directory, so with this argument we can save some computational time.
 *Example:* ``` -sto 32```
 
 **IMPORTANT:** It must be a natural number.
@@ -104,7 +104,7 @@ The number_clashes argument sets up the maximum number of clashes allowed during
 
 - ***-of / --output_filename***
 
-The output_filename argument sets up the name of the final PDB file. By default, the name of the file will be macrocomplex.
+The output_filename argument sets up the name of the final PDB file. By default, the name of the file will be "macrocomplex".
 
 **IMPORTANT:** It must be defined without any extension(i.e. .pdb).   
 *Example:* ``` -of 1ghs_model_BioMaBuilder```
@@ -113,44 +113,44 @@ The output_filename argument sets up the name of the final PDB file. By default,
 ## *BioMaBuilder* algorithm’s description
 BioMaBuilder uses a recursive algorithm which will be explained in this section step by step.
 As have been explained in ***argument description and requirements*** section, as input, a directory containing all the PDB files with the pairwise interactions is given.
-BioMaBuilder uses an internal function to obtain all the PDB files present in the input directory. In this step, the program is able to handle errors such as the name given by the user as an input, actually is not a directory.
+BioMaBuilder uses an internal function to obtain all the PDB files present in the input directory. In this step, the program is able to handle errors such as the name given by the user as an input, in case it is not a directory.
 
-Once the PDB files have been obtained, the algorithm calls another internal function, ***get_best_core***. This function search through all PDB files given as input and looks to select the molecule more times repeated. That means that a molecule in which more interactions with different molecules presents is selected as a core for the macro-complex building. This selection will reduce the computational cost of the program due to the nature of the recursive macro-complex build used in this tool. However, the user can also select the core of the macro-complex for particular goals.
+Once the PDB files have been obtained, the algorithm calls another internal function, ***get_best_core***. This function searches through all PDB files given as input and looks for the most represented molecule, to select it as the core for the macro-complex building. This selection will reduce the computational cost of the program due to the nature of the recursive macro-complex building function used in this tool. However, the user can also select manually (with the `-cs` argument) the core of the macro-complex for particular goals.
 
-When the core file has been selected, and the structure object is obtained using the internal function, ***obtain_structure***(that is based on the PDBParser module of Biopython) the program calls the recursive function to start constructing the macro-complex.
+When the core file has been selected, and the structure object is obtained using the internal function ***obtain_structure***(that is based on the PDBParser module of Biopython), the program calls the recursive function to start constructing the macro-complex.
 
-This recursive function, called ***BioBuilder***, takes as arguments, the structure object of the core, a list containing all the PDB files provided in the input argument (*pdb_files*), three different arguments for internal use: - 1. *num_iterations*: To keep track of the number of iterations the function does. - 2. *stop_counter*: To keep track of the number of files that do not add any chain to the core complex (this value will be one of the two conditions to stop the recursive function). - 3. *id_counter*: Useful argument to deal with errors in chain nomenclature. And finally, the different arguments the user can work with, such as *stoichiometry*, *RMSD_threshold*, *number_clashes*, *input_directory* and, *verbose*.
+This recursive function, called ***BioBuilder***, takes as arguments the structure object of the core, a list containing all the PDB files provided in the input argument (*pdb_files*), three different arguments for internal use: - 1. *num_iterations*: To keep track of the number of iterations the function does. - 2. *stop_counter*: To keep track of the number of files that do not add any chain to the core complex (this value will be one of the two conditions to stop the recursive function). - 3. *id_counter*: Useful argument to deal with errors in chain nomenclature. And finally, the different arguments the user can work with, such as *stoichiometry*, *RMSD_threshold*, *number_clashes*, *input_directory* and, *verbose*.
 
-***BioBuilder*** function starts measuring the number of chains present in the core_structure ( that will be the final macro-complex), at this step, the chains present should be 2 (since they are those presents in the PDB file assigned as the core). Then, the function checks out if the conditions to finish the macro-complex have been fulfilled. These conditions are 1. The stoichiometry provided by the user is equal to the number of chains present in the macro-complex. 2. If there is not any PDB file that can keep adding new chains to the macro-complex.
+***BioBuilder*** function starts measuring the number of chains present in the core_structure (that will be the final macro-complex), at this step, the chains present should be 2 (since they are those presents in the PDB file assigned as the core). Then, the function checks out if the conditions to finish the macro-complex have been fulfilled. These conditions are 1. The stoichiometry provided by the user is equal to the number of chains present in the macro-complex. 2. If there is not any PDB file that can keep adding new chains to the macro-complex.
 
-Once the stop conditions have been checked out, and the macro-complex build can go on, the function select the first PDB file in the *pdb_files* and define it as test file (that will be tested in order to know if it presents some potential chain to add to the macro-complex). The structure object of the test file is obtained using ***obtain_structure*** function.
-Now, it starts the main part of the function, which consist on superposing the chains present in both the core file and the test file, and therefore, performing 4 different superpositions of alpha carbons (*CA*) in each iteration of the recursive function (i.e. If the core file has the chains *A* and *C*, and the test file has the chains *A* and *F*, the superpositions will be *A-A*, *A-F*, *C-A*, *C-F*). These superpositions are performed using the internal function superimpose_structures which takes as arguments the structure objects of core and test files, and the *RMDS_threshold* argument given by the user (or the default value for this argument).
+Once the stop conditions have been checked out, the macro-complex build can continue. The function selects the first PDB file in the *pdb_files* and defines it as the test file (that will be tested in order to know if it presents some potential chain to add to the macro-complex). The structure object of the test file is obtained using ***obtain_structure*** function.
+Now, it starts the main part of the function, which consist on superposing the chains present in both the core file and the test file, and therefore, performing 4 different superpositions (i.e. If the core file has the chains *A* and *C*, and the test file has the chains *A* and *F*, the superpositions will be *A-A*, *A-F*, *C-A*, *C-F*). These superpositions are performed using the internal function ***superimpose_structures*** which takes as arguments the structure objects of core and test files, and the *RMDS_threshold* argument given by the user (or the default value for this argument).
 
-The superimpose_structures function obtain the molecule type of each chain (since they can be protein, DNA or RNA) and the correspondent backbone atoms ( *CA* in the case of proteins or 4’ carbons (*C4’*) in the case of RNA/DNA) using the internal functions ***get_molecule_type*** and ***get_backbone_atoms_protein*** / ***get_backbone_atoms_nucleicacids*** respectively.
+The ***superimpose_structures*** function obtains the molecule type of each chain (since they can be protein, DNA or RNA) and the corresponding backbone atoms ( *CA* in the case of proteins or 4’ carbons (*C4’*) in the case of RNA/DNA) using the internal functions ***get_molecule_type*** and ***get_backbone_atoms_protein*** / ***get_backbone_atoms_nucleicacids*** respectively.
 
 
-In this way, the superposition of both chains only will take place if they are the same type of molecule (protein-protein, DNA-DNA or RNA-RNA) and if both chains have the same number of backbone atoms (making sure that they are the exactly the same molecule, in terms of molecule type and number of atoms).
+In this way, the superposition of both chains will only take place if they are the same type of molecule (protein-protein, DNA-DNA or RNA-RNA) and if both chains have the same number of backbone atoms (making sure that they are the exactly the same molecule, in terms of molecule type and number of atoms).
 Following with the previous example, imagine that the chain *A* in core file and test file is a protein molecule with 800 atoms, the core file chain *C* is a DNA molecule with 300 atoms, and the test file chain *F* is a protein molecule with 400 atoms. Only the superposition of chain *A* (core file) with chain *A* (test file) will be performed since they share the same molecule type and the number of atoms.
 
-At this point, when a superposition is done, the correspondent RMSD value is compared with *RMSD_threshold* argument value, and only those superpositions that present a smaller RMSD value than the threshold will be consider as valid superpositions.
-All the valid superpositions will be stored in a dictionary with the molecule combination as keys *(A-A)* and the RMSD-value of the superposition as value. Then, this dictionary will be sorted according to the RMSD values (from smaller to bigger ones). Finally, the ***superimpose_structures*** function will return to ***BioBuilder*** function the sorted dictionary with all the valid superpositions, the value of the best RMSD obtained, and a Boolean variable which will be true if a valid superposition has been taken place.
+At this point, when a superposition is done, the corresponding RMSD value is compared with *RMSD_threshold* argument value, and only those superpositions that present a smaller RMSD value than the threshold will be considered as valid superpositions.
+All the valid superpositions will be stored in a dictionary with the molecule combination as keys *(A-A)* and the superposition object as value. Then, this dictionary will be sorted according to the RMSD values (from lower to higher ones). Finally, the ***superimpose_structures*** function will return to ***BioBuilder*** function the sorted dictionary with all the valid superpositions, the value of the best RMSD obtained, and a Boolean variable which will be true if at least there has been one valid superposition.
 
-***BioBuilder*** function is going to work with these results from ***superimpose_structures*** function.
+***BioBuilder*** function is going to work with these results yielded by ***superimpose_structures*** function.
 
-First, the Boolean variable result is checked, if the result is *False* which means that there is not valid superimposition, the list containing all the PDB files is modified and the first file (selected in this iteration as test file) is sent to the last position in the list. And for *num_iteration* and *stop_counter* variables, one unit is added, since the current test file is not able to add any chain to the macro-complex.  Thus, the ***BioBuilder*** is called itself, selecting a new file as a test file.
+First, the Boolean variable result is checked, if the result is *False* which means that there is not valid superimposition, the list containing all the PDB files is modified and the first file (selected in this iteration as test file) is sent to the last position in the list. And for *num_iteration* and *stop_counter* variables, one unit is added, since the current test file is not able to add any chain to the macro-complex.  Thus, ***BioBuilder*** calls itself again, selecting a new file as a test file.
 
-However, if the Boolean variable result is *True*, therefore, there is at least one valid superposition. Following the previous example, the unique valid superposition would be *A-A*, but actually, the interesting part of the superposition is the following:
+However, if the Boolean variable result is *True* means there has been at least one valid superposition. Following the previous example, the unique valid superposition would be *A-A*, but actually, the interesting part of the superposition is the following:
 
 
 <img src="images/superposition.jpeg" width="830" height="236">
 
 
-The matrices of rotation and translation, applied in the superposition, now apply to the atoms of the chain of test file which is not in the core test (chain *F* in the example). Therefore, this chain is now considered as a potential chain to add to the macro-complex.
+The matrices of rotation and translation, applied in the superposition, are now applied to the atoms of the chains of test file. The point here is that we are not interested in the test chain that was superimposed with the core, but the other one, which is not in the core yet (chain *F* in the example). Therefore, this chain is now considered as a potential chain to add to the macro-complex.
 
-Before adding the potential chain to the macro-complex the ***BioBuilder*** function checks if this chain is already present in the macro-complex. Using the NeighbourSearch class in order to find all the atoms of the potential chain to add within the radius of whatever macro-complex chain.
+Before adding the potential chain to the macro-complex the ***BioBuilder*** function checks if this chain is already present in the macro-complex. Using the NeighbourSearch class in order to find all the atoms of the potential chain to add that could be clashing with any atom in the current macro-complex core.
 
-The method *search* of this class iterate through all the atoms of the potential chain looking for clashes with atoms in the macro-complex. The clashes are stored in a list, and then the length of it is compared to the *number_clashes* argument value. If the length of the list is greater than the *number_clashes* value that means the chain is already present in the macro-complex, and therefore, the chain is discarded. And  the ***BioBuilder*** function is called itself again, adding one more unit to *stop_counter* variable.  
-Otherwise, if the length of the clashes list is lower than the *number_clashes* value, the chain is added to the macro-complex. And the ***BioBuilder*** function is called itself again, changing the test file and rewriting the *stop_counter* as zero.
+The method *search* of this class iterates through all the atoms of the potential adding chain looking for clashes with atoms in the macro-complex. The clashes are stored in a list, and then its length is compared to the *number_clashes* argument value. If the length of the list is greater than the *number_clashes* value that chain is comnsidered to be already present in the macro-complex, and therefore, the chain is discarded. And  the ***BioBuilder*** function calls itself again, adding one more unit to *stop_counter* variable.  
+Otherwise, if the length of the clashes list is lower than the *number_clashes* value, the chain is added to the macro-complex. And the ***BioBuilder*** function calls itself again, changing the test file and rewriting the *stop_counter* as zero.
 
 
 <img src="images/macrocomplex.jpeg" width="260" height="232">
@@ -158,13 +158,13 @@ Otherwise, if the length of the clashes list is lower than the *number_clashes* 
 
 Notice, that the ***get_best_core*** function reduces the computational cost since, all the files which can add some chain to the macro-complex model will be selected probably first.
 
-Once ***BioBuilder*** has iterate through all the PDB files, two scenarios can take place: 1. The macro-complex have achieved the number of chains defined on the *stoichiometry* argument. 2. Any file is able to add a new chain to the macro-complex since all chains are already added. In both scenarios, the ***BioBuilder*** function finishes returning a structure object containing the macro-complex and it will be stored in a *.pdb* or *.cif* file according to the macro-complex size.
-Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pairwise alignments among the sequences provide in the fasta file.
+Once ***BioBuilder*** has iterated through all the PDB files, two scenarios can take place: 1. The macro-complex has achieved the number of chains defined on the *stoichiometry* argument. 2. There is not any file able to add a new chain to the macro-complex since all chains are already added. In both scenarios, the ***BioBuilder*** function finishes returning a structure object containing the macro-complex and it will be stored in a *.pdb* file.
+Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pairwise alignments among the sequences provided in the fasta file.
 
 
 ## Limitations
-- **BioMaBuilder** is able to work with macro-complex up to 99.999 atoms (since it is under the   PDB format limitations) or up to 62 chains.
-- The **BioMaBuilder** computational cost increases linearly.
+- **BioMaBuilder** is able to work with macro-complexes up to 99.999 atoms (since it is under the PDB format limitations) or up to 62 chains.
+- The **BioMaBuilder** computational cost increases linearly, so when working with big macro-complexes, the number of possible comparisons increases as the core structure of the macro-complex gets bigger, so does the computational time of the program.
 
 ## Requirements
 **BioMaBuilder** requires the following python modules and packages:
@@ -181,7 +181,7 @@ For further visualization of macro-complex you can use Chimera, ICM, or PyMol.
 
 ## Installation
 
-To install the **BioMaBuilder** package the user just needs to download the **biomabuilder-0.1.0.tar.gz** (which can be found inside the `dist` folder), which is a source archive, and unpack it. Doing that, a directory named biomabuilder-0.1.0 will be created, then `cd` into that directory, where `setup.py` should be (check it before continuing), and run: ``` python3 setup.py install```, which will ultimately copy all files from the package to the appropiate directory for third-party packages in the users Python installation.
+To install the **BioMaBuilder** package the user just needs to download the **biomabuilder-0.1.0.tar.gz** (which can be found inside the `dist` folder), which is a source archive, and unpack it. Doing that, a directory named biomabuilder-0.1.0 will be created, then `cd` into that directory, where `setup.py` should be found (check it before continuing), and run: ``` python3 setup.py install```, which will ultimately copy all files from the package to the appropiate directory for third-party packages in the users Python installation.
 
 ## Tutorial
 
@@ -189,7 +189,7 @@ First of all it is important to state that we did not install the package, so we
 
 It is recommended to create a folder where the different output files of the program will be stored inside the */biomabuilder-0.1.0* directory. Otherwise, if the output folder is set to be outside the */biomabuilder-0.1.0* directory, the **alignments.txt** file will be generated inside the */biomabuilder-0.1.0/biomabuilder* folder.
 
-For the visualization of the macrocomplexes we used the Chimera software, in light brown can be seen the structures created by our algorithm, and in light blue the original structures from PDB database.
+For the visualization of the macrocomplexes we used the Chimera software, in light brown can be seen the structures created by our algorithm, and in light blue the original structures from PDB database. All the screenshots show the two structures.
 
 
 ### **Example 1:**
