@@ -1,1 +1,1 @@
-__all__ = ['biobuilder_core', 'biobuilder_functions']
+__all__ = ['biomabuilder_core', 'biomabuilder_functions']
