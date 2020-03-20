@@ -63,7 +63,7 @@ The output argument must be a directory or path directory. The program will chec
 
 - ***-fa / --fasta***
 
-The fasta argument must be a fasta file with all the sequences of the complex.  
+The fasta argument must be the path of a fasta file with all the sequences of the complex.  
 *Example:* ``` -fa fafile.fasta, -fa fafile.fa```
 
 #### Optional arguments
@@ -121,7 +121,7 @@ When the core file has been selected, and the structure object is obtained using
 
 This recursive function, called ***BioBuilder***, takes as arguments, the structure object of the core, a list containing all the PDB files provided in the input argument (*pdb_files*), three different arguments for internal use: - 1. *num_iterations*: To keep track of the number of iterations the function does. - 2. *stop_counter*: To keep track of the number of files that do not add any chain to the core complex (this value will be one of the two conditions to stop the recursive function). - 3. *id_counter*: Useful argument to deal with errors in chain nomenclature. And finally, the different arguments the user can work with, such as *stoichiometry*, *RMSD_threshold*, *number_clashes*, *input_directory* and, *verbose*.
 
-***BuiBuilder*** function starts measuring the number of chains present in the core_structure ( that will be the final macro-complex), at this step, the chains present should be 2 (since they are those presents in the PDB file assigned as the core). Then, the function checks out if the conditions to finish the macro-complex have been fulfilled. These conditions are 1. The stoichiometry provided by the user is equal to the number of chains present in the macro-complex. 2. If there is not any PDB file that can keep adding new chains to the macro-complex.
+***BioBuilder*** function starts measuring the number of chains present in the core_structure ( that will be the final macro-complex), at this step, the chains present should be 2 (since they are those presents in the PDB file assigned as the core). Then, the function checks out if the conditions to finish the macro-complex have been fulfilled. These conditions are 1. The stoichiometry provided by the user is equal to the number of chains present in the macro-complex. 2. If there is not any PDB file that can keep adding new chains to the macro-complex.
 
 Once the stop conditions have been checked out, and the macro-complex build can go on, the function select the first PDB file in the *pdb_files* and define it as test file (that will be tested in order to know if it presents some potential chain to add to the macro-complex). The structure object of the test file is obtained using ***obtain_structure*** function.
 Now, it starts the main part of the function, which consist on superposing the chains present in both the core file and the test file, and therefore, performing 4 different superpositions of alpha carbons (*CA*) in each iteration of the recursive function (i.e. If the core file has the chains *A* and *C*, and the test file has the chains *A* and *F*, the superpositions will be *A-A*, *A-F*, *C-A*, *C-F*). These superpositions are performed using the internal function superimpose_structures which takes as arguments the structure objects of core and test files, and the *RMDS_threshold* argument given by the user (or the default value for this argument).
@@ -186,6 +186,7 @@ To install the **BioMaBuilder** package the user just needs to download the **bi
 ## Tutorial
 
 First of all it is important to state that we did not install the package, so we are running it from within the biomabuilder folder, where all the scripts are stored. Take into account that the input, fasta, and output arguments can be a path where those files are stored, so the examples provided here probably will not work in your computer, each user has to adapt the command line syntaxis for his particular case.
+It is recommended to create a folder where the different output files of the program will be stored inside the */biomabuilder-0.1.0* directory. Otherwise, if the output folder is set to be outside the */biomabuilder-0.1.0* directory, the **alignments.txt** file will be generated inside the */biomabuilder-0.1.0/biomabuilder* folder.
 For the visualization of the macrocomplexes we used the Chimera software, in light brown can be seen the structures created by our algorithm, and in light blue the original structures from PDB database.
 
 
