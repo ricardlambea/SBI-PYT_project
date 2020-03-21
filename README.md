@@ -207,14 +207,14 @@ About the arguments used after the script name, there are the mandatory input `-
 Using `time` at the beginning of the command (`time python3 biobuilder...`) when running the shell allows us to see the total amount of time the process lasted. In this example it took 0.810 seconds. 
 The RMSD after running MatchMaker is 0.000 angstroms.
 
-Matchmaker 1gzx_original.pdb, chain B (#1) with 1gzx.pdb, chain B (#0), sequence alignment score = 788.5
-with these parameters:
-	chain pairing: bb
-	Needleman-Wunsch using BLOSUM-62
-	ss fraction: 0.3
-	gap open (HH/SS/other) 18/18/6, extend 1
-	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
-	iteration cutoff: 2
+Matchmaker 1gzx_original.pdb, chain B (#1) with 1gzx.pdb, chain B (#0).
+Sequence alignment score = 788.5 with these parameters:  
+	Chain pairing: bb  
+	Needleman-Wunsch using BLOSUM-62  
+	ss fraction: 0.3  
+	Gap open (HH/SS/other) 18/18/6, extend 1  
+	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
+	Iteration cutoff: 2  
 RMSD between 146 pruned atom pairs is 0.000 angstroms; (across all 146 pairs: 0.000)
 
 <img src="images/image1gzx_compared.png" width="500" height="500">
