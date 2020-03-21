@@ -228,7 +228,7 @@ To build our model we execute the following command:
   python3 biobuilder_core.py -i /3kuy -fa fastafile.fa -o out_dir -of 3kuy -sto 10 -v
 ```
 
-In that case we use 10 as the stoichiometry value as there are 8 protein chains and 2 acid nucleic molecules. The computational time this example took was 2.989 seconds. As can be seen, the superimposition is not perfect, but it is quite good.
+In that case we use 10 as the stoichiometry value as there are 8 protein chains and 2 nucleic acid molecules. The computational time in this example took was 2.989 seconds. As can be seen, the superimposition is not perfect, but it is quite good.
 The RMSD after running MatchMaker is 0.000 angstroms.
 
 Matchmaker 3kuy_original.pdb, chain C (#1) with 3kuy.pdb, chain C (#0), sequence alignment score = 533
@@ -254,12 +254,12 @@ The computational time in this case was 13.222 seconds.The RMSD after running Ma
 
 Matchmaker 5ara_original.pdb, chain A (#1) with 5ara.pdb, chain A (#0), sequence alignment score = 2557.5
 with these parameters:
-	chain pairing: bb
-	Needleman-Wunsch using BLOSUM-62
-	ss fraction: 0.3
-	gap open (HH/SS/other) 18/18/6, extend 1
-	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
-	iteration cutoff: 2
+	chain pairing: bb  
+	Needleman-Wunsch using BLOSUM-62  
+	ss fraction: 0.3  
+	gap open (HH/SS/other) 18/18/6, extend 1  
+	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
+	iteration cutoff: 2  
 RMSD between 509 pruned atom pairs is 0.000 angstroms; (across all 509 pairs: 0.000)
 
 <img src="images/image5ara_compared.png" width="500" height="500">
