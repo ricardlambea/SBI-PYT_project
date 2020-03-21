@@ -216,7 +216,7 @@ Parameters:
 - Gap open (HH/SS/other) 18/18/6, extend 1  
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
 - Iteration cutoff: 2  
-RMSD between 146 pruned atom pairs is 0.000 angstroms; (across all 146 pairs: 0.000)
+RMSD between 146 pruned atom pairs is 0.000 angstroms (across all 146 pairs: 0.000)
 
 <img src="images/image1gzx_compared.png" width="500" height="500">
 
