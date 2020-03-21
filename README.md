@@ -254,8 +254,8 @@ In order to buil the complex we run on the shell the command:
 ```
 The computational time in this case was 13.222 seconds.The RMSD after running MatchMaker is 0.000 angstroms.
 
-Matchmaker 5ara_original.pdb, chain A (#1) with 5ara.pdb, chain A (#0).
-Sequence alignment score = 2557.5    
+Matchmaker 5ara_original.pdb, chain A (#1) with 5ara.pdb, chain A (#0).  
+Sequence alignment score = 2557.5      
 Parameters:    
 - Chain pairing: bb  
 - Needleman-Wunsch using BLOSUM-62  
