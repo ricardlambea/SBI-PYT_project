@@ -205,7 +205,6 @@ Note that we are executing our program with `python3` at the beginning, and that
 About the arguments used after the script name, there are the mandatory input `-i` and output `-o` directories, the fasta file argument `-fa`, we also called the optional output filename `-of` argument, the stoichiometry `-sto` argument with a value of 4 as it is the number of chains present in the complex, and finally the verbose argument `-v` to redirect to the standard error channel the verbose statements.
 
 Using `time` at the beginning of the command (`time python3 biobuilder...`) when running the shell allows us to see the total amount of time the process lasted. In this example it took 0.810 seconds. 
-The RMSD after running MatchMaker is 0.000 angstroms.
 
 Matchmaker 1gzx_original.pdb, chain B (#1) with 1gzx.pdb, chain B (#0).  
 Sequence alignment score = 788.5.  
@@ -216,7 +215,7 @@ Parameters:
 - Gap open (HH/SS/other) 18/18/6, extend 1  
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
 - Iteration cutoff: 2  
-RMSD between 146 pruned atom pairs is 0.000 angstroms (across all 146 pairs: 0.000)
+RMSD between 146 pruned atom pairs is 0.000 angstroms (across all 146 pairs: 0.000).
 
 <img src="images/image1gzx_compared.png" width="500" height="500">
 
@@ -230,10 +229,9 @@ To build our model we execute the following command:
 ```
 
 In that case we use 10 as the stoichiometry value as there are 8 protein chains and 2 nucleic acid molecules. The computational time in this example took was 2.989 seconds. As can be seen, the superimposition is not perfect, but it is quite good.
-The RMSD after running MatchMaker is 0.000 angstroms.
 
 Matchmaker 3kuy_original.pdb, chain C (#1) with 3kuy.pdb, chain C (#0).  
-Sequence alignment score = 533  
+Sequence alignment score = 533.  
 Parameters:  
 - Chain pairing: bb  
 - Needleman-Wunsch using BLOSUM-62  
@@ -241,7 +239,7 @@ Parameters:
 - Gap open (HH/SS/other) 18/18/6, extend 1  
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
 - Iteration cutoff: 2    
-RMSD between 106 pruned atom pairs is 0.000 angstroms; (across all 106 pairs: 0.000)
+RMSD between 106 pruned atom pairs is 0.000 angstroms; (across all 106 pairs: 0.000).
 
 <img src="images/image3kuy_compared.png" width="500" height="500">
 
@@ -252,10 +250,10 @@ In order to buil the complex we run on the shell the command:
 ```bash
   python3 biobuilder_core.py -i /5ara -fa fastafile.fa -o out_dir -of 5ara -sto 22 -v
 ```
-The computational time in this case was 13.222 seconds.The RMSD after running MatchMaker is 0.000 angstroms.
+The computational time in this case was 13.222 seconds.
 
 Matchmaker 5ara_original.pdb, chain A (#1) with 5ara.pdb, chain A (#0).  
-Sequence alignment score = 2557.5      
+Sequence alignment score = 2557.5.   
 Parameters:    
 - Chain pairing: bb  
 - Needleman-Wunsch using BLOSUM-62  
@@ -263,7 +261,7 @@ Parameters:
 - Gap open (HH/SS/other) 18/18/6, extend 1  
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
 - Iteration cutoff: 2  
-RMSD between 509 pruned atom pairs is 0.000 angstroms; (across all 509 pairs: 0.000)
+RMSD between 509 pruned atom pairs is 0.000 angstroms; (across all 509 pairs: 0.000).
 
 <img src="images/image5ara_compared.png" width="500" height="500">
 
@@ -276,6 +274,18 @@ To build the model we execute the following command in the shell:
   python3 biobuilder_core.py -i /5dn6 -fa fastafile.fa -o out_dir -of 5dn6 -sto 27 -v
 ```
 The computational time was 14.164 seconds.
+
+Matchmaker 5dn6_original.pdb, chain A (#1) with 5dn6.pdb, chain A (#0).
+Sequence alignment score = 2553.
+Parameters:
+- Chain pairing: bb
+- Needleman-Wunsch using BLOSUM-62
+- ss fraction: 0.3
+- Gap open (HH/SS/other) 18/18/6, extend 1
+- ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
+- Iteration cutoff: 2
+RMSD between 505 pruned atom pairs is 0.000 angstroms; (across all 505 pairs: 0.000).
+
 
 <img src="images/image5dn6_compared.png" width="500" height="500">
 
@@ -290,6 +300,17 @@ To build the model we execute the following command:
 
 The computational time has been 1 minute and 7.917 seconds.
 
+Matchmaker 5oom_original.pdb, chain 5 (#1) with 5oom.pdb, chain 5 (#0).
+Sequence alignment score = 2027.1.
+Parameters:
+- Chain pairing: bb
+- Needleman-Wunsch using BLOSUM-62
+- ss fraction: 0.3
+- Gap open (HH/SS/other) 18/18/6, extend 1
+- ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
+- Iteration cutoff: 2
+RMSD between 387 pruned atom pairs is 0.000 angstroms; (across all 387 pairs: 0.000).
+
 <img src="images/image5oom_compared.png" width="500" height="500">
 
 
@@ -302,6 +323,19 @@ We run the next command on the shell to build it:
 ```
 
 The computational time has been 6.389 seconds.
+
+Matchmaker 6ezm_original.pdb, chain U (#1) with 6ezm.pdb, chain A (#0).
+Sequence alignment score = 989.6.
+Parameters:
+- Chain pairing: bb
+- Needleman-Wunsch using BLOSUM-62
+- ss fraction: 0.3
+- Gap open (HH/SS/other) 18/18/6, extend 1
+- ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
+- Iteration cutoff: 2
+RMSD between 177 pruned atom pairs is 0.639 angstroms; (across all 203 pairs: 6.312).
+
+
 
 <img src="images/image6ezm_compared.png" width="500" height="500">
 
@@ -317,15 +351,15 @@ To build the model we execute the following command:
 The computational time was 22.505 seconds. The RMSD after running MatchMaker is 0.000 angstroms.
 
 Matchmaker 5vox_original.pdb, chain b (#1) with 5vox.pdb, chain b (#0).  
-Sequence alignment score = 3058.7  
+Sequence alignment score = 3058.7.
 Parameters:  
--Chain pairing: bb  
+- Chain pairing: bb  
 - Needleman-Wunsch using BLOSUM-62  
 - ss fraction: 0.3  
 - Gap open (HH/SS/other) 18/18/6, extend 1  
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
 - Iteration cutoff: 2  
-RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.000)
+RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.000).
 
 <img src="images/image5vox_compared.png" width="500" height="500">
 
