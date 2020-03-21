@@ -284,6 +284,7 @@ Parameters:
 - Gap open (HH/SS/other) 18/18/6, extend 1
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
 - Iteration cutoff: 2
+
 RMSD between 505 pruned atom pairs is 0.000 angstroms; (across all 505 pairs: 0.000).
 
 
@@ -309,6 +310,7 @@ Parameters:
 - Gap open (HH/SS/other) 18/18/6, extend 1
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
 - Iteration cutoff: 2
+
 RMSD between 387 pruned atom pairs is 0.000 angstroms; (across all 387 pairs: 0.000).
 
 <img src="images/image5oom_compared.png" width="500" height="500">
@@ -333,6 +335,7 @@ Parameters:
 - Gap open (HH/SS/other) 18/18/6, extend 1
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
 - Iteration cutoff: 2
+
 RMSD between 177 pruned atom pairs is 0.639 angstroms; (across all 203 pairs: 6.312).
 
 
