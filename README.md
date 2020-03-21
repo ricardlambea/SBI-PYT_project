@@ -329,7 +329,7 @@ RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.
 
 <img src="images/image5vox_compared.png" width="500" height="500">
 
-<img src="~/Desktop/5vox_pymol_superimposed.png" width="500" height="500">
+<img src="Desktop/5vox_pymol_superimposed.png" width="500" height="500">
 
 ## Ongoing
 
