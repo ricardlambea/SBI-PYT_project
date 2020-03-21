@@ -209,12 +209,12 @@ The RMSD after running MatchMaker is 0.000 angstroms.
 
 Matchmaker 1gzx_original.pdb, chain B (#1) with 1gzx.pdb, chain B (#0).
 Sequence alignment score = 788.5 with these parameters:  
-	Chain pairing: bb  
-	Needleman-Wunsch using BLOSUM-62  
-	ss fraction: 0.3  
-	Gap open (HH/SS/other) 18/18/6, extend 1  
-	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
-	Iteration cutoff: 2  
+- Chain pairing: bb  
+- Needleman-Wunsch using BLOSUM-62   
+- ss fraction: 0.3  
+- Gap open (HH/SS/other) 18/18/6, extend 1  
+- ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
+- Iteration cutoff: 2  
 RMSD between 146 pruned atom pairs is 0.000 angstroms; (across all 146 pairs: 0.000)
 
 <img src="images/image1gzx_compared.png" width="500" height="500">
@@ -233,12 +233,12 @@ The RMSD after running MatchMaker is 0.000 angstroms.
 
 Matchmaker 3kuy_original.pdb, chain C (#1) with 3kuy.pdb, chain C (#0), sequence alignment score = 533
 with these parameters:  
-	Chain pairing: bb  
-	Needleman-Wunsch using BLOSUM-62  
-	ss fraction: 0.3  
-	Gap open (HH/SS/other) 18/18/6, extend 1  
-	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
-	Iteration cutoff: 2  
+- Chain pairing: bb  
+- Needleman-Wunsch using BLOSUM-62  
+- ss fraction: 0.3  
+- Gap open (HH/SS/other) 18/18/6, extend 1  
+- ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
+- Iteration cutoff: 2  
 RMSD between 106 pruned atom pairs is 0.000 angstroms; (across all 106 pairs: 0.000)
 
 <img src="images/image3kuy_compared.png" width="500" height="500">
@@ -255,12 +255,12 @@ The computational time in this case was 13.222 seconds.The RMSD after running Ma
 Matchmaker 5ara_original.pdb, chain A (#1) with 5ara.pdb, chain A (#0).
 Sequence alignment score = 2557.5  
 Parameters:  
-	Chain pairing: bb  
-	Needleman-Wunsch using BLOSUM-62  
-	ss fraction: 0.3  
-	Gap open (HH/SS/other) 18/18/6, extend 1  
-	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
-	Iteration cutoff: 2    
+- Chain pairing: bb  
+- Needleman-Wunsch using BLOSUM-62  
+- ss fraction: 0.3  
+- Gap open (HH/SS/other) 18/18/6, extend 1  
+- ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
+- Iteration cutoff: 2    
 RMSD between 509 pruned atom pairs is 0.000 angstroms; (across all 509 pairs: 0.000)
 
 <img src="images/image5ara_compared.png" width="500" height="500">
@@ -316,12 +316,12 @@ The computational time was 22.505 seconds. The RMSD after running MatchMaker is 
 
 Matchmaker 5vox_original.pdb, chain b (#1) with 5vox.pdb, chain b (#0), sequence alignment score = 3058.7
 with these parameters:  
-	Chain pairing: bb  
-	Needleman-Wunsch using BLOSUM-62  
-	ss fraction: 0.3  
-	Gap open (HH/SS/other) 18/18/6, extend 1  
-	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
-	Iteration cutoff: 2  
+-Chain pairing: bb  
+- Needleman-Wunsch using BLOSUM-62  
+- ss fraction: 0.3  
+- Gap open (HH/SS/other) 18/18/6, extend 1  
+- ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
+- Iteration cutoff: 2  
 RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.000)
 
 <img src="images/image5vox_compared.png" width="500" height="500">
