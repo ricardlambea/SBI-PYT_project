@@ -207,8 +207,9 @@ About the arguments used after the script name, there are the mandatory input `-
 Using `time` at the beginning of the command (`time python3 biobuilder...`) when running the shell allows us to see the total amount of time the process lasted. In this example it took 0.810 seconds. 
 The RMSD after running MatchMaker is 0.000 angstroms.
 
-Matchmaker 1gzx_original.pdb, chain B (#1) with 1gzx.pdb, chain B (#0).
-Sequence alignment score = 788.5 with these parameters:  
+Matchmaker 1gzx_original.pdb, chain B (#1) with 1gzx.pdb, chain B (#0).  
+Sequence alignment score = 788.5.  
+Parameters:  
 - Chain pairing: bb  
 - Needleman-Wunsch using BLOSUM-62   
 - ss fraction: 0.3  
@@ -231,14 +232,15 @@ To build our model we execute the following command:
 In that case we use 10 as the stoichiometry value as there are 8 protein chains and 2 nucleic acid molecules. The computational time in this example took was 2.989 seconds. As can be seen, the superimposition is not perfect, but it is quite good.
 The RMSD after running MatchMaker is 0.000 angstroms.
 
-Matchmaker 3kuy_original.pdb, chain C (#1) with 3kuy.pdb, chain C (#0), sequence alignment score = 533
-with these parameters:  
+Matchmaker 3kuy_original.pdb, chain C (#1) with 3kuy.pdb, chain C (#0).  
+Sequence alignment score = 533  
+Parameters:  
 - Chain pairing: bb  
 - Needleman-Wunsch using BLOSUM-62  
 - ss fraction: 0.3  
 - Gap open (HH/SS/other) 18/18/6, extend 1  
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
-- Iteration cutoff: 2  
+- Iteration cutoff: 2    
 RMSD between 106 pruned atom pairs is 0.000 angstroms; (across all 106 pairs: 0.000)
 
 <img src="images/image3kuy_compared.png" width="500" height="500">
@@ -253,14 +255,14 @@ In order to buil the complex we run on the shell the command:
 The computational time in this case was 13.222 seconds.The RMSD after running MatchMaker is 0.000 angstroms.
 
 Matchmaker 5ara_original.pdb, chain A (#1) with 5ara.pdb, chain A (#0).
-Sequence alignment score = 2557.5  
-Parameters:  
+Sequence alignment score = 2557.5    
+Parameters:    
 - Chain pairing: bb  
 - Needleman-Wunsch using BLOSUM-62  
 - ss fraction: 0.3  
 - Gap open (HH/SS/other) 18/18/6, extend 1  
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
-- Iteration cutoff: 2    
+- Iteration cutoff: 2  
 RMSD between 509 pruned atom pairs is 0.000 angstroms; (across all 509 pairs: 0.000)
 
 <img src="images/image5ara_compared.png" width="500" height="500">
@@ -314,8 +316,9 @@ To build the model we execute the following command:
 
 The computational time was 22.505 seconds. The RMSD after running MatchMaker is 0.000 angstroms.
 
-Matchmaker 5vox_original.pdb, chain b (#1) with 5vox.pdb, chain b (#0), sequence alignment score = 3058.7
-with these parameters:  
+Matchmaker 5vox_original.pdb, chain b (#1) with 5vox.pdb, chain b (#0).  
+Sequence alignment score = 3058.7  
+Parameters:  
 -Chain pairing: bb  
 - Needleman-Wunsch using BLOSUM-62  
 - ss fraction: 0.3  
