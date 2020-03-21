@@ -232,13 +232,13 @@ In that case we use 10 as the stoichiometry value as there are 8 protein chains 
 The RMSD after running MatchMaker is 0.000 angstroms.
 
 Matchmaker 3kuy_original.pdb, chain C (#1) with 3kuy.pdb, chain C (#0), sequence alignment score = 533
-with these parameters:
-	chain pairing: bb
-	Needleman-Wunsch using BLOSUM-62
-	ss fraction: 0.3
-	gap open (HH/SS/other) 18/18/6, extend 1
-	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
-	iteration cutoff: 2
+with these parameters:  
+	Chain pairing: bb  
+	Needleman-Wunsch using BLOSUM-62  
+	ss fraction: 0.3  
+	Gap open (HH/SS/other) 18/18/6, extend 1  
+	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
+	Iteration cutoff: 2  
 RMSD between 106 pruned atom pairs is 0.000 angstroms; (across all 106 pairs: 0.000)
 
 <img src="images/image3kuy_compared.png" width="500" height="500">
@@ -252,21 +252,22 @@ In order to buil the complex we run on the shell the command:
 ```
 The computational time in this case was 13.222 seconds.The RMSD after running MatchMaker is 0.000 angstroms.
 
-Matchmaker 5ara_original.pdb, chain A (#1) with 5ara.pdb, chain A (#0), sequence alignment score = 2557.5
-with these parameters:
-	chain pairing: bb  
+Matchmaker 5ara_original.pdb, chain A (#1) with 5ara.pdb, chain A (#0).
+Sequence alignment score = 2557.5  
+Parameters:  
+	Chain pairing: bb  
 	Needleman-Wunsch using BLOSUM-62  
 	ss fraction: 0.3  
-	gap open (HH/SS/other) 18/18/6, extend 1  
+	Gap open (HH/SS/other) 18/18/6, extend 1  
 	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
-	iteration cutoff: 2  
+	Iteration cutoff: 2    
 RMSD between 509 pruned atom pairs is 0.000 angstroms; (across all 509 pairs: 0.000)
 
 <img src="images/image5ara_compared.png" width="500" height="500">
 
 
 ### **Example 4:**
-The fourth example is the protein **5dn6**, an ATP synthase from *Paracoccus dentrifricans* (strain Pd 1222). It is a hetero 27-mer (A12B3C3DEFGHIJKL).
+The fourth example is the protein **5dn6**, an ATP synthase from *Paracoccus dentrifricans* (strain Pd 1222). It is a hetero 27-mer (A12B3C3DEFGHIJKL).  
 To build the model we execute the following command in the shell:
 
 ```bash
@@ -278,7 +279,7 @@ The computational time was 14.164 seconds.
 
 
 ### **Example 5:**
-The fifth example is the protein **5oom**, a structure of a native assembly intermediate of the human mitochondrial ribosome with unfolded interfacial rRNA. It is a hetero 53-mer  (ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzA).
+The fifth example is the protein **5oom**, a structure of a native assembly intermediate of the human mitochondrial ribosome with unfolded interfacial rRNA. It is a hetero 53-mer  (ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzA).  
 To build the model we execute the following command:
 
 ```bash
@@ -291,7 +292,7 @@ The computational time has been 1 minute and 7.917 seconds.
 
 
 ### **Example 6:**
-The sixth example is the protein **6ezm**, which is a imidazoleglycerol-phosphate dehydratase from *Saccharomyces cerevisiae*. It is a homo 24-mer (A24).
+The sixth example is the protein **6ezm**, which is a imidazoleglycerol-phosphate dehydratase from *Saccharomyces cerevisiae*. It is a homo 24-mer (A24).  
 We run the next command on the shell to build it:
 
 ```bash
@@ -304,7 +305,7 @@ The computational time has been 6.389 seconds.
 
 
 ### **Example 7:**
-The seventh example is the protein **5vox**, which is a V-ATPase from *S. cerevisiae* (strain ATCC 204508/S288c). It is a hetero 33-mer (A8B3C3D3E3F3GHIJKLMNOP).
+The seventh example is the protein **5vox**, which is a V-ATPase from *S. cerevisiae* (strain ATCC 204508/S288c). It is a hetero 33-mer (A8B3C3D3E3F3GHIJKLMNOP).  
 To build the model we execute the following command:
 
 ```bash
@@ -314,13 +315,13 @@ To build the model we execute the following command:
 The computational time was 22.505 seconds. The RMSD after running MatchMaker is 0.000 angstroms.
 
 Matchmaker 5vox_original.pdb, chain b (#1) with 5vox.pdb, chain b (#0), sequence alignment score = 3058.7
-with these parameters:
-	chain pairing: bb
-	Needleman-Wunsch using BLOSUM-62
-	ss fraction: 0.3
-	gap open (HH/SS/other) 18/18/6, extend 1
-	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
-	iteration cutoff: 2
+with these parameters:  
+	Chain pairing: bb  
+	Needleman-Wunsch using BLOSUM-62  
+	ss fraction: 0.3  
+	Gap open (HH/SS/other) 18/18/6, extend 1  
+	ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
+	Iteration cutoff: 2  
 RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.000)
 
 <img src="images/image5vox_compared.png" width="500" height="500">
