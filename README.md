@@ -392,7 +392,7 @@ Parameters:
 - Iteration cutoff: 2
 RMSD between 1441 pruned atom pairs is 0.000 angstroms; (across all 1441 pairs: 0.000).
 
-<img src="images/image5vox_compared.png" width="500" height="500">
+<img src="images/image6gmh_compared.png" width="500" height="500">
 
 
 ### **Example 9:**
@@ -416,7 +416,7 @@ Parameters:
 - Iteration cutoff: 2
 RMSD between 1422 pruned atom pairs is 0.000 angstroms; (across all 1422 pairs: 0.000).
 
-<img src="images/image5vox_compared.png" width="500" height="500">
+<img src="images/image5fj8_compared.png" width="500" height="500">
 
 
 ### **Example 10:**
@@ -440,7 +440,7 @@ Parameters:
 - Iteration cutoff: 2
 RMSD between 1340 pruned atom pairs is 0.000 angstroms; (across all 1340 pairs: 0.000).
 
-<img src="images/image5vox_compared.png" width="500" height="500">
+<img src="images/image5nss_compared.png" width="500" height="500">
 
 ## Ongoing
 
