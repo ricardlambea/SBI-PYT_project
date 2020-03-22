@@ -372,7 +372,7 @@ RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.
 
 
 ### **Example 8:**
-The eigth example is the protein **6gmh**, which is the structure of an activated transcription complex Pol II-DSIF-PAF-SPT6 from *H. sapiens*. It is a hetero 19-mer ABCDEFGHIJKLMNOPQRS.  
+The eighth example is the protein **6gmh**, which is the structure of an activated transcription complex Pol II-DSIF-PAF-SPT6 from *H. sapiens*. It is a hetero 19-mer ABCDEFGHIJKLMNOPQRS.  
 To build the model we execute the following command:
 
 ```bash
