@@ -163,8 +163,9 @@ Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pai
 
 
 ## Limitations
-- **BioMaBuilder** is able to work with macro-complexes up to 99.999 atoms (since it is under the PDB format limitations) or up to 62 chains.
+- **BioMaBuilder** works only with macro-complexes up to 99.999 atoms (since it is under the PDB format limitations) or up to 62 chains.
 - The **BioMaBuilder** computational cost increases linearly, so when working with big macro-complexes, the number of possible comparisons increases as the core structure of the macro-complex gets bigger, so does the computational time of the program.
+- Apparently **BioMaBuilder** experiences some problems when working with PDB structures showing cyclic global symmetry. However, this problem may also be related to how the pairwise interaction files were generated.
 
 ## Requirements
 **BioMaBuilder** requires the following python modules and packages:
@@ -411,6 +412,30 @@ Parameters:
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
 - Iteration cutoff: 2
 RMSD between 1422 pruned atom pairs is 0.000 angstroms; (across all 1422 pairs: 0.000).
+
+<img src="images/image5vox_compared.png" width="500" height="500">
+
+
+### **Example 10:**
+The seventh example is the protein **5nss**, which is a cryo-EM structure of RNA polymerase-sigma54 holoenzyme with promoter DNA and transcription activator PspF intermedate complex from *E. coli* K-12 It is a hetero 12-mer A6B2CDEF.  
+To build the model we execute the following command:
+
+```bash
+  python3 biobuilder_core.py -i /5nss -fa fastafile.fa -o out_dir -of 5nss -sto 12 -v
+```
+
+The computational time was 9.968 seconds.
+
+Matchmaker 5nss.pdb, chain C (#1) with 5nss.pdb, chain C (#0).
+Sequence alignment score = 6685.
+Parameters:
+- Chain pairing: bb
+- Needleman-Wunsch using BLOSUM-62
+- ss fraction: 0.3
+- Gap open (HH/SS/other) 18/18/6, extend 1
+- ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
+- Iteration cutoff: 2
+RMSD between 1340 pruned atom pairs is 0.000 angstroms; (across all 1340 pairs: 0.000).
 
 <img src="images/image5vox_compared.png" width="500" height="500">
 
