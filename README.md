@@ -372,7 +372,7 @@ RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.
 
 
 ### **Example 8:**
-The seventh example is the protein **6gmh**, which is the structure of an activated transcription complex Pol II-DSIF-PAF-SPT6 from *H. sapiens*. It is a hetero 19-mer ABCDEFGHIJKLMNOPQRS.  
+The eigth example is the protein **6gmh**, which is the structure of an activated transcription complex Pol II-DSIF-PAF-SPT6 from *H. sapiens*. It is a hetero 19-mer ABCDEFGHIJKLMNOPQRS.  
 To build the model we execute the following command:
 
 ```bash
@@ -396,7 +396,7 @@ RMSD between 1441 pruned atom pairs is 0.000 angstroms; (across all 1441 pairs: 
 
 
 ### **Example 9:**
-The seventh example is the protein **5fj8**, which is a cryo-EM structure of RNA polymerase III elongation complex from *S.cerevisiae*. It is a hetero 17-mer ABCDEFGHIJKLMNOPQ.  
+The ninth example is the protein **5fj8**, which is a cryo-EM structure of RNA polymerase III elongation complex from *S.cerevisiae*. It is a hetero 17-mer ABCDEFGHIJKLMNOPQ.  
 To build the model we execute the following command:
 
 ```bash
@@ -420,7 +420,7 @@ RMSD between 1422 pruned atom pairs is 0.000 angstroms; (across all 1422 pairs: 
 
 
 ### **Example 10:**
-The seventh example is the protein **5nss**, which is a cryo-EM structure of RNA polymerase-sigma54 holoenzyme with promoter DNA and transcription activator PspF intermedate complex from *E. coli* K-12 It is a hetero 12-mer A6B2CDEF.  
+The tenth example is the protein **5nss**, which is a cryo-EM structure of RNA polymerase-sigma54 holoenzyme with promoter DNA and transcription activator PspF intermedate complex from *E. coli* K-12 It is a hetero 12-mer A6B2CDEF.  
 To build the model we execute the following command:
 
 ```bash
