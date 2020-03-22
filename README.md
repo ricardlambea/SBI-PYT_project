@@ -351,7 +351,7 @@ To build the model we execute the following command:
   python3 biobuilder_core.py -i /5vox -fa fastafile.fa -o out_dir -of 5vox -sto 33 -v
 ```
 
-The computational time was 22.505 seconds. The RMSD after running MatchMaker is 0.000 angstroms.
+The computational time was 22.505 seconds.
 
 Matchmaker 5vox_original.pdb, chain b (#1) with 5vox.pdb, chain b (#0).  
 Sequence alignment score = 3058.7.
@@ -363,6 +363,54 @@ Parameters:
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
 - Iteration cutoff: 2  
 RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.000).
+
+<img src="images/image5vox_compared.png" width="500" height="500">
+
+
+### **Example 8:**
+The seventh example is the protein **6gmh**, which is the structure of an activated transcription complex Pol II-DSIF-PAF-SPT6 from *H. sapiens*. It is a hetero 19-mer ABCDEFGHIJKLMNOPQRS.  
+To build the model we execute the following command:
+
+```bash
+  python3 biobuilder_core.py -i /6gmh -fa fastafile.fa -o out_dir -of 6gmh -sto 19 -v
+```
+
+The computational time was 14.894 seconds.
+
+Matchmaker 6gmh.pdb, chain A (#1) with 6gmh.pdb, chain A (#0).
+Sequence alignment score = 7235.1.
+Parameters:
+- Chain pairing: bb
+- Needleman-Wunsch using BLOSUM-62
+- ss fraction: 0.3
+- Gap open (HH/SS/other) 18/18/6, extend 1
+- ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
+- Iteration cutoff: 2
+RMSD between 1441 pruned atom pairs is 0.000 angstroms; (across all 1441 pairs: 0.000).
+
+<img src="images/image5vox_compared.png" width="500" height="500">
+
+
+### **Example 9:**
+The seventh example is the protein **5fj8**, which is a cryo-EM structure of RNA polymerase III elongation complex from *S.cerevisiae*. It is a hetero 17-mer ABCDEFGHIJKLMNOPQ.  
+To build the model we execute the following command:
+
+```bash
+  python3 biobuilder_core.py -i /5fj8 -fa fastafile.fa -o out_dir -of 5fj8 -sto 17 -v
+```
+
+The computational time was 22.782 seconds.
+
+Matchmaker 5fj8_original.pdb, chain A (#1) with 5fj8.pdb, chain A (#0).
+Sequence alignment score = 7172.9.
+Parameters:
+- Chain pairing: bb
+- Needleman-Wunsch using BLOSUM-62
+- ss fraction: 0.3
+- Gap open (HH/SS/other) 18/18/6, extend 1
+- ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
+- Iteration cutoff: 2
+RMSD between 1422 pruned atom pairs is 0.000 angstroms; (across all 1422 pairs: 0.000).
 
 <img src="images/image5vox_compared.png" width="500" height="500">
 
