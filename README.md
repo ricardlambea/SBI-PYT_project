@@ -23,6 +23,9 @@ Carolina Hernández-Oliver<sup>1</sup>, Ricard Lambea-Jané<sup>1</sup> and JV R
 	- [Example 5](#example-5)
 	- [Example 6](#example-6)
 	- [Example 7](#example-7)
+	- [Example 8](#example-8)
+	- [Example 9](#example-9)
+	- [Example 10](#example-10)
 - [Ongoing](#ongoing)
 - [Bibliography](#bibliography)
 
@@ -165,7 +168,7 @@ Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pai
 ## Limitations
 - **BioMaBuilder** works only with macro-complexes up to 99.999 atoms (since it is under the PDB format limitations) or up to 62 chains.
 - The **BioMaBuilder** computational cost increases linearly, so when working with big macro-complexes, the number of possible comparisons increases as the core structure of the macro-complex gets bigger, so does the computational time of the program.
-- Apparently **BioMaBuilder** experiences some problems when working with PDB structures showing cyclic global symmetry. However, this problem may also be related to how the pairwise interaction files were generated.
+- **BioMaBuilder** experiences some problems when working with certain PDB structures, but apparently these files do not show any common pattern between them, so this problem may just be related to how the pairwise interaction files are extracted.
 
 ## Requirements
 **BioMaBuilder** requires the following python modules and packages:
