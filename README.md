@@ -193,7 +193,7 @@ First of all it is important to state that we ran the program without installing
 
 It is recommended to create a folder where the different output files of the program will be stored inside the */biomabuilder-0.1.0* directory. Otherwise, if the output folder is set to be outside the */biomabuilder-0.1.0* directory, the **alignments.txt** file will be generated inside the */biomabuilder-0.1.0/biomabuilder* folder.
 
-For the visualization of the macrocomplexes we used the Chimera software, in light brown can be seen the structures created by our algorithm, and in light blue the original structures from PDB database. All the screenshots show the two structures.
+For the visualization of the macrocomplexes we used the Chimera software, in light brown can be seen the structures created by our algorithm, and in light blue the original structures from PDB database. All the pictures show the two structures.
 
 
 ### **Example 1:**
