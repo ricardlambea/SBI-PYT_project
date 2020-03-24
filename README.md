@@ -191,7 +191,7 @@ To install the **BioMaBuilder** package the user just needs to download the **bi
 
 First of all it is important to state that we ran the program without installing it. It is also necessary to `cd` into the */biomabuilder-0.1.0/biomabuilder* folder, where all the scripts are stored, to run the program correctly. Take into account that the input, fasta, and output arguments should be a path where those files are stored, so the examples provided here probably will not work in your computer, each user has to adapt the command line syntaxis for his particular case.
 
-It is recommended to create a folder where the different output files of the program will be stored inside the */biomabuilder-0.1.0* directory. Otherwise, if the output folder is set to be outside the */biomabuilder-0.1.0* directory, the **alignments.txt** file will be generated inside the */biomabuilder-0.1.0/biomabuilder* folder.
+It is **highly recommended** to create a folder where the different output files of the program will be stored, inside the */biomabuilder-0.1.0* directory. Otherwise, if the output folder is set to be outside the */biomabuilder-0.1.0* directory, the **alignments.txt** file will be generated inside the */biomabuilder-0.1.0/biomabuilder* folder.
 
 For the visualization of the macrocomplexes we used the Chimera software, in light brown can be seen the structures created by our algorithm, and in light blue the original structures from PDB database. All the pictures show the two structures.
 
@@ -365,7 +365,8 @@ Parameters:
 - ss fraction: 0.3  
 - Gap open (HH/SS/other) 18/18/6, extend 1  
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4  
-- Iteration cutoff: 2  
+- Iteration cutoff: 2
+
 RMSD between 634 pruned atom pairs is 0.000 angstroms; (across all 634 pairs: 0.000).
 
 <img src="images/image5vox_compared.png" width="500" height="500">
@@ -390,6 +391,7 @@ Parameters:
 - Gap open (HH/SS/other) 18/18/6, extend 1
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
 - Iteration cutoff: 2
+
 RMSD between 1441 pruned atom pairs is 0.000 angstroms; (across all 1441 pairs: 0.000).
 
 <img src="images/image6gmh_compared.png" width="500" height="500">
@@ -414,6 +416,7 @@ Parameters:
 - Gap open (HH/SS/other) 18/18/6, extend 1
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
 - Iteration cutoff: 2
+
 RMSD between 1422 pruned atom pairs is 0.000 angstroms; (across all 1422 pairs: 0.000).
 
 <img src="images/image5fj8_compared.png" width="500" height="500">
@@ -438,6 +441,7 @@ Parameters:
 - Gap open (HH/SS/other) 18/18/6, extend 1
 - ss matrix:  (O, S): -6 (H, O): -6 (H, H): 6 (S, S): 6 (H, S): -9 (O, O): 4
 - Iteration cutoff: 2
+
 RMSD between 1340 pruned atom pairs is 0.000 angstroms; (across all 1340 pairs: 0.000).
 
 <img src="images/image5nss_compared.png" width="500" height="500">
