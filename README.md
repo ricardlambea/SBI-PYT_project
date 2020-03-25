@@ -124,7 +124,7 @@ When the core file has been selected, and the structure object is obtained using
 
 This recursive function, called ***BioBuilder***, takes as arguments the structure object of the core, a list containing all the PDB files provided in the input argument (*pdb_files*), three different arguments for internal use: - 1. *num_iterations*: To keep track of the number of iterations the function does. - 2. *stop_counter*: To keep track of the number of files that do not add any chain to the core complex (this value will be one of the two conditions to stop the recursive function). - 3. *id_counter*: Useful argument to deal with errors in chain nomenclature. And finally, the different arguments the user can work with, such as *stoichiometry*, *RMSD_threshold*, *number_clashes*, *input_directory* and, *verbose*.
 
-***BioBuilder*** function starts measuring the number of chains present in the core_structure (that will be the final macro-complex), at this step, the chains present should be 2 (since they are those presents in the PDB file assigned as the core). Then, the function checks out if the conditions to finish the macro-complex have been fulfilled. These conditions are 1. The stoichiometry provided by the user is equal to the number of chains present in the macro-complex. 2. If there is not any PDB file that can keep adding new chains to the macro-complex.
+***BioBuilder*** function starts measuring the number of chains present in the core_structure (that will be the final macro-complex), at this step, the chains present should be 2 (since they are those presents in the PDB file assigned as the core). Then, the function checks out if the conditions to finish the macro-complex have been fulfilled. These conditions are 1. The stoichiometry provided by the user is equal to the number of chains present in the macro-complex. 2. If there is not any PDB file that can keep adding new chains to the macro-complex. 3. The maximum number of iterations has been reached(200).
 
 Once the stop conditions have been checked out, the macro-complex build can continue. The function selects the first PDB file in the *pdb_files* and defines it as the test file (that will be tested in order to know if it presents some potential chain to add to the macro-complex). The structure object of the test file is obtained using ***obtain_structure*** function.
 Now, it starts the main part of the function, which consist on superposing the chains present in both the core file and the test file, and therefore, performing 4 different superpositions (i.e. If the core file has the chains *A* and *C*, and the test file has the chains *A* and *F*, the superpositions will be *A-A*, *A-F*, *C-A*, *C-F*). These superpositions are performed using the internal function ***superimpose_structures*** which takes as arguments the structure objects of core and test files, and the *RMDS_threshold* argument given by the user (or the default value for this argument).
@@ -161,12 +161,11 @@ Otherwise, if the length of the clashes list is lower than the *number_clashes* 
 
 Notice, that the ***get_best_core*** function reduces the computational cost since, all the files which can add some chain to the macro-complex model will be selected probably first.
 
-Once ***BioBuilder*** has iterated through all the PDB files, two scenarios can take place: 1. The macro-complex has achieved the number of chains defined on the *stoichiometry* argument. 2. There is not any file able to add a new chain to the macro-complex since all chains are already added. In both scenarios, the ***BioBuilder*** function finishes returning a structure object containing the macro-complex and it will be stored in a *.pdb* file.
+Once ***BioBuilder*** has iterated through all the PDB files, two scenarios can take place: 1. The macro-complex has achieved the number of chains defined on the *stoichiometry* argument. 2. There is not any file able to add a new chain to the macro-complex since all chains are already added. In both scenarios, the ***BioBuilder*** function finishes returning a structure object containing the macro-complex and it will be stored in a *.pdb* or *.cif* file.
 Finally, as an extra, **BioMaBuilder** also generates a *.txt* file with the pairwise alignments among the sequences provided in the fasta file.
 
 
 ## Limitations
-- **BioMaBuilder** works only with macro-complexes up to 99.999 atoms (since it is under the PDB format limitations) or up to 62 chains.
 - The **BioMaBuilder** computational cost increases linearly, so when working with big macro-complexes, the number of possible comparisons increases as the core structure of the macro-complex gets bigger, so does the computational time of the program.
 - **BioMaBuilder** experiences some problems when working with certain PDB structures, but apparently these files do not show any common pattern between them, so this problem may just be related to how the pairwise interaction files are extracted.
 
@@ -451,7 +450,6 @@ RMSD between 1340 pruned atom pairs is 0.000 angstroms; (across all 1340 pairs: 
 Future approaches that would be added to this program include:
 - Handling small compounds such hormones, peptides, metabolites or drugs.
 - Performing a refinement of the final macro-complex allowing the model dynamics and flexibility.
-- Being able to test complexes composed of more than 99.999 atoms or a number of chains greater than 62.
 - Generating more than one possible model.
 
 ## Bibliography
