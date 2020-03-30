@@ -229,6 +229,8 @@ def biobuilder(core_structure, files_list, num_iteration, stop_counter, extra_ar
 	current_num_core_chain = len(core_structure[0])
 	num_iteration += 1
 
+	if args.verbose:
+		sys.stderr.write("Starting iteration number %d.\n" %num_iteration)
 	##### Conditions to stop the recursive function ######
 	if current_num_core_chain == sto or stop_counter > len(pdb_files) or num_iteration == 200:
 		if args.verbose:

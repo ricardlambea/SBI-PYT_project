@@ -25,11 +25,13 @@ dealer.add_argument('-ncl', '--number_clashes', dest = "number_clashes", action 
 dealer.add_argument('-of', '--output_filename', dest = "out_name", action = "store", default = "macrocomplex", help = "Optional argument. This argument sets up the name of the final PDB file. By default, the name of the file will be macrocomplex. It must be defined without any extension (i.e. .pdb)")
 
 args = dealer.parse_args()
+
 if args.input_directory:
     if os.path.isdir(args.input_directory): # Checks out if input_directory argument is a directory.
             pdb_files = obtain_pdb_files(args.input_directory)
             if args.verbose:
                 sys.stderr.write("Have been found %d pdb files in %s directory.\n" %(len(pdb_files), args.input_directory))
+
     else:
         raise IncorrectInput("%s" %(args.input_directory))
 
@@ -38,24 +40,24 @@ if args.core_selection: # Checks out if core_selection argument have been define
     core_path =  args.input_directory + "/" + args.core_selection # Uses the file defined in core_selection argument as core file.
     if args.verbose:
         sys.stderr.write("The file %s has been defined as the initial core for macro-complex building.\n" %(args.core_selection))
+
 else: # If core_selection argument has not been defined, obtain the best core file using get_best_core function.
     core_path = args.input_directory + "/" + get_best_core(pdb_files)
-    # core_path = args.input_directory + "/" + pdb_files[0]
+
     if args.verbose:
         sys.stderr.write("The file %s has been defined as the initial core for macro-complex building.\n" %(core_path))
+
 core_structure = obtain_structure("core", core_path) # Obtains the structure object of the core file.
 core_model = core_structure[0] # Obtains the model of the core file.
 
 if args.verbose:
     sys.stderr.write("Starting to construct the macrocomplex...\n")
 
-
-final_model = biobuilder(core_structure = core_structure, files_list = pdb_files, num_iteration = 0, stop_counter = 0, id_counter = 0, extra_arguments = args) # Calls the recursive function to construct the final model.
-
+# Calls the recursive function to construct the final model.
+final_model = biobuilder(core_structure = core_structure, files_list = pdb_files, num_iteration = 0, stop_counter = 0, extra_arguments = args)
 
 if args.verbose:
     sys.stderr.write("GREAT! The macrocomplex building process has finished correctly!.\n")
-
 
 if args.fasta_file: # Aligns fasta sequences
     align_fasta_seqs(args.fasta_file, args.out_name)
@@ -68,6 +70,7 @@ if os.path.exists(args.output_directory): # Checks out if output_directory exist
     os.system("mv" + " " + "../biomabuilder/alignments-" + args.out_name + ".txt" + " " + "./" + args.out_name + "-alignments.txt")
     if args.verbose:
         sys.stderr.write("The final model has been stored in %s directory.\n" %(args.output_directory))
+
 else:
     os.mkdir(args.output_directory) # Creates the output_directory
     os.chdir(args.output_directory)
