@@ -1,5 +1,5 @@
 import argparse
-from biomabuilder_functions import *
+from biomabuilderfunctions import *
 
 
 ########################## DEALING WITH ARGUMENTS ##########################
