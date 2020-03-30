@@ -202,7 +202,7 @@ def superimpose_structures (core_model, test_model, RMSD_threshold):
 
 
 
-def biobuilder(core_structure, files_list, num_iteration, stop_counter, id_counter, extra_arguments):
+def biobuilder(core_structure, files_list, num_iteration, stop_counter, extra_arguments):
 	""" This function plays on the superimposition function to construct recursively the macrocomplex biomolecule, and eventually returns it as a structure object when a given condition is met.
 
 	Keyword arguments:
@@ -210,7 +210,6 @@ def biobuilder(core_structure, files_list, num_iteration, stop_counter, id_count
 	files_list -- list of input ".pdb" files.
 	num_iteration -- number that keeps track of the number of iterations.
 	stop_counter -- condition to stop the recursive function.
-	id_counter -- support for ID nomenclature discrepances.
 	extra_arguments -- Argparse object containing all the arguments entered by the user in the cmd.
 			stoichiometry -- number of chains the complex must have.
 			RMSD_threshold -- root-mean-square deviation threshold for the superimposition.
@@ -255,7 +254,7 @@ def biobuilder(core_structure, files_list, num_iteration, stop_counter, id_count
 		removed_file = pdb_files.pop(0)
 		pdb_files.append(removed_file)
 		stop_counter += 1
-		return biobuilder(core_structure = core_structure, files_list = pdb_files, num_iteration = num_iteration, stop_counter = stop_counter, id_counter = id_counter, extra_arguments = args) # Calls the recursive function.
+		return biobuilder(core_structure = core_structure, files_list = pdb_files, num_iteration = num_iteration, stop_counter = stop_counter, extra_arguments = args) # Calls the recursive function.
 
 	else: # If there is a valid superimposition.
 		for chains, superimp_obj in superimpositions: # Iterates through all the chains and superimposition objects in superimposition dictionary.
@@ -295,43 +294,33 @@ def biobuilder(core_structure, files_list, num_iteration, stop_counter, id_count
 						sys.stderr.write("Chain %s of the test file %s is not clashing with any chain in the complex.\n" %(adding_chain.id, test_file))
 					continue
 			if chain_already_added is False: # If the potential chain to add is not already present.
-				id_counter += 1
-				#######################
-				corechain_ids = [chain.id for chain in core_structure[0].get_chains()]
-				characters = list("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789")
-				if adding_chain.id in corechain_ids:
+				corechain_ids = [chain.id for chain in core_structure[0].get_chains()] # Stores all core chains in a list
+				characters = list("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789") # List of possible characters for the chain IDs
+				if adding_chain.id in corechain_ids: # If the adding_chain ID already exists among the core chains, change it
 					old_id_chain = adding_chain.id
-					if len(corechain_ids) <= 62:
+					if len(corechain_ids) <= 62: # There 62 valid single characters to be set as ID
 						for letter in characters:
 							if letter not in corechain_ids:
 								adding_chain.id = letter
 								break
-					elif len(corechain_ids) > 62:
+					elif len(corechain_ids) > 62: # If there are more than 62 chains in the core structure, we need to combine two characters to set a new ID
 						for letter in characters:
 							adding_chain.id = old_id_chain + letter
 							if adding_chain.id not in corechain_ids:
 								break
 					if args.verbose:
 						sys.stderr.write("ID of the current chain has changed from %s to %s.\n" %(old_id_chain, adding_chain.id))
-				#####################
-				# for chain in core_structure[0].get_chains(): # Checks if the ID of the adding_chain is already taken by any of the core chains, in that case, change the adding_chain ID.
-				# 	if adding_chain.id == chain.id:
-				# 		old_id_chain = adding_chain.id
-				# 		adding_chain.id = id_counter #para pdbs
-				# 		# if len(list(core_structure[0].get_chains())) > 62:
-				# 		# 	adding_chain.id = old_id_chain + str(id_counter)  #para cifs
-				# 		if args.verbose:
-				# 			sys.stderr.write("ID of the current chain has changed from %s to %s.\n" %(old_id_chain, adding_chain.id))
+
 				core_structure[0].add(adding_chain) # Adds the potential chain to add to the core structure.
 				if args.verbose:
 					sys.stderr.write("The chain %s has now been added to the macrocomplex.\n" %(adding_chain.id))
 				removed_file = pdb_files.pop(0) # Test file is sent to the end of the list.
 				pdb_files.append(removed_file)
 				stop_counter = 0 # Restarts the stop_counter variable since there has been a chain addition.
-				return biobuilder(core_structure = core_structure, files_list = pdb_files, num_iteration = num_iteration, stop_counter = stop_counter, id_counter = id_counter, extra_arguments = args) #Calls the recursive function again.
+				return biobuilder(core_structure = core_structure, files_list = pdb_files, num_iteration = num_iteration, stop_counter = stop_counter, extra_arguments = args) #Calls the recursive function again.
 
 	## No valid superimposition ##
 	removed_file = pdb_files.pop(0) # Test file is sent to the end of the list, in order to get a new one.
 	pdb_files.append(removed_file)
 	stop_counter += 1
-	return biobuilder(core_structure = core_structure, files_list = pdb_files, num_iteration = num_iteration, stop_counter = stop_counter, id_counter = id_counter, extra_arguments = args) # Calls the recursive function again.
+	return biobuilder(core_structure = core_structure, files_list = pdb_files, num_iteration = num_iteration, stop_counter = stop_counter, extra_arguments = args) # Calls the recursive function again.
